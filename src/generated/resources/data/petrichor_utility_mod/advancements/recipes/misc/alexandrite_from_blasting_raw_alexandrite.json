@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_alexandrite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "petrichor_utility_mod:raw_alexandrite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "petrichor_utility_mod:alexandrite_from_blasting_raw_alexandrite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_alexandrite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "petrichor_utility_mod:alexandrite_from_blasting_raw_alexandrite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

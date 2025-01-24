@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "alexandrite",
+  "ingredients": [
+    {
+      "item": "petrichor_utility_mod:raw_alexandrite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "petrichor_utility_mod:raw_alexandrite"
+  }
+}
