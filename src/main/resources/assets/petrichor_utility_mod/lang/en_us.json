@@ -1,9 +1,11 @@
 {
-  "item.petrichor_utility_mod.alexandrite": "Alexandrite",
-  "item.petrichor_utility_mod.raw_alexandrite": "Raw Alexandrite",
+  "item.petrichor_utility_mod.coin": "Coin",
+  "item.petrichor_utility_mod.coin_bundle": "Bundle of Coins",
+  "item.petrichor_utility_mod.large_coin_bundle": "Large Bundle of Coins",
+  "item.petrichor_utility_mod.frog_idol": "Frog Idol",
 
   "block.petrichor_utility_mod.alexandrite_block": "Block of Alexandrite",
   "block.petrichor_utility_mod.raw_alexandrite_block": "Block of Raw Alexandrite",
 
-  "creativetab.course_tab": "Course Tab"
+  "creativetab.petrichor_tab": "Petrichor"
 }

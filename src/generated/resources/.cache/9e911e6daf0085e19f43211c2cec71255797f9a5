@@ -1,3 +1,5 @@
-// 1.20.1	2025-01-24T16:15:51.6209145	Item Models: petrichor_utility_mod
-4cc7a71e725d237d0911ef927e7852e41e1c67a5 assets/petrichor_utility_mod/models/item/alexandrite.json
-06b2158b1127562ff66db17e0c32a0a4075dd99a assets/petrichor_utility_mod/models/item/raw_alexandrite.json
+// 1.20.1	2025-01-24T16:56:46.685887	Item Models: petrichor_utility_mod
+5aba90c436ad0c177d5c0d8545f5bce0dadfaa8d assets/petrichor_utility_mod/models/item/coin.json
+a038468b53f10a1a65202b6e3a427d9f3b2970fc assets/petrichor_utility_mod/models/item/coin_bundle.json
+ddc98f28250578e557b6ba1bf5380097c1599480 assets/petrichor_utility_mod/models/item/frog_idol.json
+f1123ae60acea92c6b643a46b4f328130aa18d83 assets/petrichor_utility_mod/models/item/large_coin_bundle.json

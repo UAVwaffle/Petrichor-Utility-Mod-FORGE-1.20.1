@@ -20,9 +20,9 @@ public class CreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PetrichorUtilityMod.MODID);
 
     // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> COURSE_TAB = CREATIVE_MODE_TABS.register("course_tab",
+    public static final RegistryObject<CreativeModeTab> PETRICHOR_TAB = CREATIVE_MODE_TABS.register("petrichor_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FROG_IDOL.get()))
-            .title(Component.translatable("creativetab.course_tab"))
+            .title(Component.translatable("creativetab.petrichor_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.COIN.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
                 output.accept(ModItems.COIN_BUNDLE.get());
@@ -35,8 +35,8 @@ public class CreativeTabs {
 
     // Add the example block item to the building blocks tab
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(ModItems.COIN);
+//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) // for adding things to vanilla creative tabs
+//            event.accept(ModItems.COIN);
     }
 
     public static void register(IEventBus eventBus) {
