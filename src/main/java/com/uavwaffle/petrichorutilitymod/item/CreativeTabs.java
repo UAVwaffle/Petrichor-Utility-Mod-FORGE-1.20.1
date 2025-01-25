@@ -1,4 +1,4 @@
-package com.uavwaffle.petrichorutilitymod.creativetab;
+package com.uavwaffle.petrichorutilitymod.item;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
@@ -28,6 +28,7 @@ public class CreativeTabs {
                 output.accept(ModItems.COIN_BUNDLE.get());
                 output.accept(ModItems.LARGE_COIN_BUNDLE.get());
                 output.accept(ModItems.FROG_IDOL.get());
+                output.accept(ModItems.BOULDER_SPIRIT_SPAWN_EGG.get());
                 output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
                 output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
             }).build());
