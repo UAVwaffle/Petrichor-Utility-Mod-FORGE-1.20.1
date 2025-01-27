@@ -29,6 +29,7 @@ public class CreativeTabs {
                 output.accept(ModItems.LARGE_COIN_BUNDLE.get());
                 output.accept(ModItems.FROG_IDOL.get());
                 output.accept(ModItems.BOULDER_SPIRIT_SPAWN_EGG.get());
+                output.accept(ModItems.VENGEFUL_GRAVESTONE_SPAWN_EGG.get());
                 output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
                 output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
             }).build());

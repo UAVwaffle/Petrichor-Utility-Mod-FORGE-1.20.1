@@ -3,6 +3,7 @@ package com.uavwaffle.petrichorutilitymod;
 import com.mojang.logging.LogUtils;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
 import com.uavwaffle.petrichorutilitymod.entity.client.BoulderSpiritRenderer;
+import com.uavwaffle.petrichorutilitymod.entity.client.VengefulGravestoneRenderer;
 import com.uavwaffle.petrichorutilitymod.item.CreativeTabs;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
 import com.uavwaffle.petrichorutilitymod.item.ModItems;
@@ -132,6 +133,7 @@ public class PetrichorUtilityMod {
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
             EntityRenderers.register(ModEntities.BOULDER_SPIRIT.get(), BoulderSpiritRenderer::new);
+            EntityRenderers.register(ModEntities.VENGEFULE_GRAVESTONE.get(), VengefulGravestoneRenderer::new);
         }
     }
 }

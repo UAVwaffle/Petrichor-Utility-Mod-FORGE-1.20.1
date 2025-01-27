@@ -4,11 +4,13 @@
   "item.petrichor_utility_mod.large_coin_bundle": "Large Bundle of Coins",
   "item.petrichor_utility_mod.frog_idol": "Frog Ingot",
   "item.petrichor_utility_mod.boulder_spirit_spawn_egg": "Boulder Spirit Spawn Egg",
+  "item.petrichor_utility_mod.vengeful_gravestone_spawn_egg": "Vengeful Gravestone Spawn Egg",
 
   "block.petrichor_utility_mod.alexandrite_block": "Block of Alexandrite",
   "block.petrichor_utility_mod.raw_alexandrite_block": "Block of Raw Alexandrite",
 
   "entity.petrichor_utility_mod.boulder_spirit": "Boulder Spirit",
+  "entity.petrichor_utility_mod.vengeful_gravestone": "Vengeful Gravestone",
 
   "creativetab.petrichor_tab": "Petrichor"
 }
