@@ -17,7 +17,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BoulderSpiritEntity>> BOULDER_SPIRIT =
             ENTITY_TYPES.register("boulder_spirit",
                     () -> EntityType.Builder.of(BoulderSpiritEntity::new, MobCategory.MONSTER)
-                            .sized(0.8f, 1.9f)
+                            .sized(0.7f, 1.9f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "boulder_spirit").toString()));
 
 
