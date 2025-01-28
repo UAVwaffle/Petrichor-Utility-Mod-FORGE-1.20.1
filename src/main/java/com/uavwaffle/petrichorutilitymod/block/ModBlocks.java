@@ -1,7 +1,9 @@
 package com.uavwaffle.petrichorutilitymod.block;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
+import com.uavwaffle.petrichorutilitymod.block.custom.ForgottenGravestoneBlock;
 import com.uavwaffle.petrichorutilitymod.item.ModItems;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -27,6 +29,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_ALEXANDRITE_BLOCK = registerBlock("raw_alexandrite_block",
             () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE)
                     .requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> FORGOTTEN_GRAVESTONE_BLOCK = BLOCKS.register("forgotten_gravestone_block_entity",
+            () -> new ForgottenGravestoneBlock(BlockBehaviour.Properties.of()
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f, 6.0f)
+                    .sound(SoundType.STONE)
+                    .noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

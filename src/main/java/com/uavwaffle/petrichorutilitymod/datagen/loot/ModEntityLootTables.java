@@ -2,6 +2,7 @@ package com.uavwaffle.petrichorutilitymod.datagen.loot;
 
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
+import com.uavwaffle.petrichorutilitymod.item.ModItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -9,6 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -35,10 +37,10 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.VENGEFULE_GRAVESTONE.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(Blocks.STONE)))
+                        .add(LootItem.lootTableItem(ModItems.FORGOTTEN_GRAVESTONE_BLOCK_ITEM.get())))
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(Blocks.MOSSY_COBBLESTONE))));
+                        .setBonusRolls(ConstantValue.exactly(0.5f))
+                        .add(LootItem.lootTableItem(Items.PAPER))));
     }
 
 

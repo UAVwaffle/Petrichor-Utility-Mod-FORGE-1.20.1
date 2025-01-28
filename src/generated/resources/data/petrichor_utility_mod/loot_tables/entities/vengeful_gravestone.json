@@ -6,17 +6,17 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone"
+          "name": "petrichor_utility_mod:forgotten_gravestone_block_entity"
         }
       ],
       "rolls": 1.0
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0.5,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:mossy_cobblestone"
+          "name": "minecraft:paper"
         }
       ],
       "rolls": 1.0

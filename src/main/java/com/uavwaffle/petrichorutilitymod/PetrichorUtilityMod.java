@@ -2,12 +2,15 @@ package com.uavwaffle.petrichorutilitymod;
 
 import com.mojang.logging.LogUtils;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
+import com.uavwaffle.petrichorutilitymod.block.entity.ModBlockEntities;
+import com.uavwaffle.petrichorutilitymod.block.entity.client.ForgottenGravestoneBlockEntityRenderer;
 import com.uavwaffle.petrichorutilitymod.entity.client.BoulderSpiritRenderer;
 import com.uavwaffle.petrichorutilitymod.entity.client.VengefulGravestoneRenderer;
 import com.uavwaffle.petrichorutilitymod.item.CreativeTabs;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
 import com.uavwaffle.petrichorutilitymod.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -83,6 +86,7 @@ public class PetrichorUtilityMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         GeckoLib.initialize();
 
@@ -131,6 +135,9 @@ public class PetrichorUtilityMod {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+
+            BlockEntityRenderers.register(ModBlockEntities.FORGOTTEN_GRAVESTONE_BLOCK_ENTITY.get(), ForgottenGravestoneBlockEntityRenderer::new);
 
             EntityRenderers.register(ModEntities.BOULDER_SPIRIT.get(), BoulderSpiritRenderer::new);
             EntityRenderers.register(ModEntities.VENGEFULE_GRAVESTONE.get(), VengefulGravestoneRenderer::new);

@@ -1,5 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
@@ -30,10 +31,15 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class VengefulGravestoneEntity extends Monster implements GeoEntity {
 
     private int attackAnimationTick = 0;
+    private boolean resting = true;
 
-    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.vengeful_gravestone.idle");
-    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.vengeful_gravestone.walk");
-    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.vengeful_gravestone.attack");
+    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.idle");
+    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.walk");
+    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.attack");
+    public static final RawAnimation REST = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.rest");
+    public static final RawAnimation RESTING = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.resting");
+    public static final RawAnimation AWAKEN = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.awaken");
+
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public VengefulGravestoneEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
@@ -59,6 +65,7 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, BoulderSpiritEntity.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
 
@@ -110,6 +117,19 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
 
 
         controllers.add(new AnimationController<>(this, "Walk/Idle", 0, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
+
+//            controllers.add( new AnimationController<>(this, "Walk/Idle", 10, state -> { //feature preview for resting transitions
+//            if (state.isMoving()) {
+//                resting = false;
+//                return state.setAndContinue(WALK);
+//            }
+//            if (resting) {
+//                return state.setAndContinue(RESTING);
+//            }
+//            return state.setAndContinue(IDLE);
+//
+//            }));
+
         controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK));
 
 //        controllers.add( new AnimationController<>(this, "Attack", 0, state -> { //Only works for animations less than 6 ticks
@@ -130,6 +150,31 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return 1.8F;
+        return 2.2F;
     }
+
+//    public void remove(Entity.RemovalReason pReason) { //make more entities
+//        if (!this.level().isClientSide && this.isDeadOrDying()) {
+//            Component component = this.getCustomName();
+//            boolean flag = this.isNoAi();
+//            int k = this.random.nextInt(2) + 1;
+//
+//            for(int l = 0; l < k; ++l) {
+//                VengefulGravestoneEntity slime = (VengefulGravestoneEntity) getType().create(level());
+//                if (slime != null) {
+//                    if (this.isPersistenceRequired()) {
+//                        slime.setPersistenceRequired();
+//                    }
+//
+//                    slime.setCustomName(component);
+//                    slime.setNoAi(flag);
+//                    slime.setInvulnerable(this.isInvulnerable());
+//                    slime.moveTo(this.getX(), this.getY() + 0.5D, this.getZ(), this.random.nextFloat() * 360.0F, 0.0F);
+//                    this.level().addFreshEntity(slime);
+//                }
+//            }
+//        }
+//
+//        super.remove(pReason);
+//    }
 }

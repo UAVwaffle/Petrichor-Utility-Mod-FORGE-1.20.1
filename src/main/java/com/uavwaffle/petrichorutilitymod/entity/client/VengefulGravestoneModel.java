@@ -7,9 +7,9 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 
 public class VengefulGravestoneModel extends GeoModel<VengefulGravestoneEntity> {
-    private final ResourceLocation model = new ResourceLocation(PetrichorUtilityMod.MODID, "geo/vengeful_gravestone.geo.json");
+    private final ResourceLocation model = new ResourceLocation(PetrichorUtilityMod.MODID, "geo/vengeful_gravestone_entity.geo.json");
     private final ResourceLocation texture = new ResourceLocation(PetrichorUtilityMod.MODID, "textures/entity/vengeful_gravestone.png");
-    private final ResourceLocation animations = new ResourceLocation(PetrichorUtilityMod.MODID, "animations/vengeful_gravestone.animation.json");
+    private final ResourceLocation animations = new ResourceLocation(PetrichorUtilityMod.MODID, "animations/vengeful_gravestone_entity.animation.json");
 
 
 

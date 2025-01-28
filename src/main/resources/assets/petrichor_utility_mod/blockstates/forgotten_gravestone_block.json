@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "petrichor_utility_mod:block/forgotten_gravestone_block" }
+  }
+}

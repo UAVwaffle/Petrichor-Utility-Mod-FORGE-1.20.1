@@ -55,6 +55,8 @@ public class BoulderSpiritEntity extends Monster implements GeoEntity {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, VengefulGravestoneEntity.class, true));
+
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
 
@@ -133,7 +135,7 @@ public class BoulderSpiritEntity extends Monster implements GeoEntity {
 //        if (!this.level().isClientSide && this.isDeadOrDying()) {
 //            Component component = this.getCustomName();
 //            boolean flag = this.isNoAi();
-//            int k = this.random.nextInt(3);
+//            int k = this.random.nextInt(2) + 1;
 //
 //            for(int l = 0; l < k; ++l) {
 //                BoulderSpiritEntity slime = (BoulderSpiritEntity) getType().create(level());

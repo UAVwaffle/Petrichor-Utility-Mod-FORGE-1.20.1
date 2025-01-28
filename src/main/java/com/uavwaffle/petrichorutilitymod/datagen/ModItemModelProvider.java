@@ -21,6 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.COIN_BUNDLE);
         simpleItem(ModItems.LARGE_COIN_BUNDLE);
         simpleItem(ModItems.FROG_IDOL);
+        simpleItem(ModItems.FORGOTTEN_GRAVESTONE_BLOCK_ITEM);
 
         withExistingParent(ModItems.BOULDER_SPIRIT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.VENGEFUL_GRAVESTONE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
