@@ -1,6 +1,5 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
@@ -28,22 +27,22 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class VengefulGravestoneEntity extends Monster implements GeoEntity {
+public class DirewolfEntity extends Monster implements GeoEntity {
 
 
     private int attackAnimationTick = 0;
     private boolean resting = true;
 
-    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.idle");
-    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.walk");
-    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.attack");
-    public static final RawAnimation REST = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.rest");
-    public static final RawAnimation RESTING = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.resting");
-    public static final RawAnimation AWAKEN = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.awaken");
+    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.direwolf.idle");
+    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.direwolf.walk");
+    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.direwolf.attack");
+//    public static final RawAnimation REST = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.rest");
+//    public static final RawAnimation RESTING = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.resting");
+//    public static final RawAnimation AWAKEN = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.awaken");
 
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    public VengefulGravestoneEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+    public DirewolfEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -151,7 +150,7 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return 2.2f;
+        return 1.3f;
     }
 
 //    public void remove(Entity.RemovalReason pReason) { //make more entities

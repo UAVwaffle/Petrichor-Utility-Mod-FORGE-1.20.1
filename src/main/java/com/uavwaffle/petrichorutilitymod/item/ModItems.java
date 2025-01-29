@@ -39,6 +39,24 @@ public class ModItems {
                     new Item.Properties()));
 
 
+
+    public static final RegistryObject<Item> DIREWOLF_SPAWN_EGG = ITEMS.register("direwolf_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DIREWOLF, 0x1448ab, 0x615f5e,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> HAUNT_SPAWN_EGG = ITEMS.register("haunt_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.HAUNT, 0x1448ab, 0x615f5e,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> MEADOW_SLIME_SPAWN_EGG = ITEMS.register("meadow_slime_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.MEADOW_SLIME, 0x1448ab, 0x615f5e,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> MEADOW_SLIME_SMALL_SPAWN_EGG = ITEMS.register("meadow_slime_small_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.MEADOW_SLIME_SMALL, 0x1448ab, 0x615f5e,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> SHADE_SPAWN_EGG = ITEMS.register("shade_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SHADE, 0x1448ab, 0x615f5e,
+                    new Item.Properties()));
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

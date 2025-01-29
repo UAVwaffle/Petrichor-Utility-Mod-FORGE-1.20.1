@@ -4,8 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
 import com.uavwaffle.petrichorutilitymod.block.entity.ModBlockEntities;
 import com.uavwaffle.petrichorutilitymod.block.entity.client.ForgottenGravestoneBlockEntityRenderer;
-import com.uavwaffle.petrichorutilitymod.entity.client.BoulderSpiritRenderer;
-import com.uavwaffle.petrichorutilitymod.entity.client.VengefulGravestoneRenderer;
+import com.uavwaffle.petrichorutilitymod.entity.client.renderer.*;
 import com.uavwaffle.petrichorutilitymod.item.CreativeTabs;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
 import com.uavwaffle.petrichorutilitymod.item.ModItems;
@@ -141,6 +140,12 @@ public class PetrichorUtilityMod {
 
             EntityRenderers.register(ModEntities.BOULDER_SPIRIT.get(), BoulderSpiritRenderer::new);
             EntityRenderers.register(ModEntities.VENGEFULE_GRAVESTONE.get(), VengefulGravestoneRenderer::new);
+
+            EntityRenderers.register(ModEntities.DIREWOLF.get(), DirewolfRenderer::new);
+            EntityRenderers.register(ModEntities.HAUNT.get(), HauntRenderer::new);
+            EntityRenderers.register(ModEntities.MEADOW_SLIME.get(), MeadowSlimeRenderer::new);
+            EntityRenderers.register(ModEntities.MEADOW_SLIME_SMALL.get(), MeadowSlimeSmallRenderer::new);
+            EntityRenderers.register(ModEntities.SHADE.get(), ShadeRenderer::new);
         }
     }
 }

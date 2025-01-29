@@ -1,8 +1,8 @@
-package com.uavwaffle.petrichorutilitymod.entity.client;
+package com.uavwaffle.petrichorutilitymod.entity.client.renderer;
 
+import com.uavwaffle.petrichorutilitymod.entity.client.model.BoulderSpiritModel;
 import com.uavwaffle.petrichorutilitymod.entity.custom.BoulderSpiritEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class BoulderSpiritRenderer extends GeoEntityRenderer<BoulderSpiritEntity> {

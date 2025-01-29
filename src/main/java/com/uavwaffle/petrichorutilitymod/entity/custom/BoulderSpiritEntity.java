@@ -128,7 +128,7 @@ public class BoulderSpiritEntity extends Monster implements GeoEntity {
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return 1.8F;
+        return 1.8f;
     }
 
 //    public void remove(Entity.RemovalReason pReason) { //make more entities

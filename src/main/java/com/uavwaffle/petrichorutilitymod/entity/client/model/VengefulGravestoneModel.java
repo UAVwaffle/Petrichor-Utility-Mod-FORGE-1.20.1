@@ -1,4 +1,4 @@
-package com.uavwaffle.petrichorutilitymod.entity.client;
+package com.uavwaffle.petrichorutilitymod.entity.client.model;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.entity.custom.BoulderSpiritEntity;
