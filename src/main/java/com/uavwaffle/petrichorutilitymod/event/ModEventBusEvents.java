@@ -14,13 +14,14 @@ public class ModEventBusEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.BOULDER_SPIRIT.get(), BoulderSpiritEntity.createAttributes().build());
         event.put(ModEntities.VENGEFULE_GRAVESTONE.get(), VengefulGravestoneEntity.createAttributes().build());
-
-
         event.put(ModEntities.DIREWOLF.get(), DirewolfEntity.createAttributes().build());
         event.put(ModEntities.HAUNT.get(), HauntEntity.createAttributes().build());
         event.put(ModEntities.MEADOW_SLIME.get(), MeadowSlimeEntity.createAttributes().build());
         event.put(ModEntities.MEADOW_SLIME_SMALL.get(), MeadowSlimeSmallEntity.createAttributes().build());
         event.put(ModEntities.SHADE.get(), ShadeEntity.createAttributes().build());
+
+        event.put(ModEntities.DEATH_KNELL.get(), DeathKnellEntity.createAttributes().build());
+        event.put(ModEntities.SPECTER.get(), SpecterEntity.createAttributes().build());
 
     }
 }

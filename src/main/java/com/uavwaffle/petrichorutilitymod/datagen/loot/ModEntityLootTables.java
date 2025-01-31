@@ -42,25 +42,38 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                         .setBonusRolls(ConstantValue.exactly(0.5f))
                         .add(LootItem.lootTableItem(Items.PAPER))));
 
-
-
         add(ModEntities.DIREWOLF.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+
         add(ModEntities.HAUNT.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+
         add(ModEntities.MEADOW_SLIME.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+
         add(ModEntities.MEADOW_SLIME_SMALL.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+
         add(ModEntities.SHADE.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+
+
+
+        add(ModEntities.DEATH_KNELL.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+        add(ModEntities.SPECTER.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));

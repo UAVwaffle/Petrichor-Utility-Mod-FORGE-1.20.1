@@ -1,6 +1,5 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -10,7 +9,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -25,7 +23,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class BoulderSpiritEntity extends Monster implements GeoEntity {
 
-    private int attackAnimationTick = 0;
+    private int attackAnimationTickLength = 0;
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.boulder_spirit.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.boulder_spirit.walk");
@@ -71,11 +69,11 @@ public class BoulderSpiritEntity extends Monster implements GeoEntity {
         if (!level().isClientSide) {
             return;
         }
-        if (attackAnimationTick > 0) {
-            attackAnimationTick--;
+        if (attackAnimationTickLength > 0) {
+            attackAnimationTickLength--;
         }
 
-        if (attackAnimationTick == 0) {
+        if (attackAnimationTickLength == 0) {
             stopTriggeredAnimation("AttackController", "Attack");
         }
     }
@@ -96,7 +94,7 @@ public class BoulderSpiritEntity extends Monster implements GeoEntity {
     }
 
     private void playAttackAnimation() {
-        this.attackAnimationTick = 14;
+        this.attackAnimationTickLength = 14;
         triggerAnim("AttackController", "Attack");
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
     }
@@ -107,7 +105,7 @@ public class BoulderSpiritEntity extends Monster implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
 
-        controllers.add(new AnimationController<>(this, "Walk/Idle", 0, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
+        controllers.add(new AnimationController<>(this, "Walk/Idle", 5, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
         controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK));
 
 //        controllers.add( new AnimationController<>(this, "Attack", 0, state -> { //Only works for animations less than 6 ticks

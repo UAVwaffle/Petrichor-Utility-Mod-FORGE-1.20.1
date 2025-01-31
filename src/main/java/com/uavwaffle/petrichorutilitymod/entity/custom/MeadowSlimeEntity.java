@@ -7,10 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.Turtle;
@@ -29,7 +26,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class MeadowSlimeEntity extends Monster implements GeoEntity {
 
-    private int attackAnimationTick = 0;
+    private int attackAnimationTickLength = 0;
     private boolean resting = true;
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.meadow_slime.idle");
@@ -49,11 +46,11 @@ public class MeadowSlimeEntity extends Monster implements GeoEntity {
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
                 .add(Attributes.ATTACK_DAMAGE, 15.0f)
                 .add(Attributes.ATTACK_SPEED, 0.5f)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 1.0D);
+                .add(Attributes.MOVEMENT_SPEED, 0.25f);
     }
 
     protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.addBehaviourGoals();
@@ -68,10 +65,6 @@ public class MeadowSlimeEntity extends Monster implements GeoEntity {
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
 
-    @Override
-    protected int decreaseAirSupply(int pAir) {
-        return pAir;
-    }
 
     @Override
     public void aiStep() {
@@ -79,11 +72,11 @@ public class MeadowSlimeEntity extends Monster implements GeoEntity {
         if (!level().isClientSide) {
             return;
         }
-        if (attackAnimationTick > 0) {
-            attackAnimationTick--;
+        if (attackAnimationTickLength > 0) {
+            attackAnimationTickLength--;
         }
 
-        if (attackAnimationTick == 0) {
+        if (attackAnimationTickLength == 0) {
             stopTriggeredAnimation("AttackController", "Attack");
         }
     }
@@ -104,7 +97,7 @@ public class MeadowSlimeEntity extends Monster implements GeoEntity {
     }
 
     private void playAttackAnimation() {
-        this.attackAnimationTick = 16;
+        this.attackAnimationTickLength = 16;
         triggerAnim("AttackController", "Attack");
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
     }
@@ -115,7 +108,7 @@ public class MeadowSlimeEntity extends Monster implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
 
-        controllers.add(new AnimationController<>(this, "Walk/Idle", 0, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
+        controllers.add(new AnimationController<>(this, "Walk/Idle", 5, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
 
 //            controllers.add( new AnimationController<>(this, "Walk/Idle", 10, state -> { //feature preview for resting transitions
 //            if (state.isMoving()) {

@@ -1,7 +1,8 @@
-// 1.20.1	2025-01-29T14:19:13.4610675	Item Models: petrichor_utility_mod
+// 1.20.1	2025-01-29T21:08:24.9909748	Item Models: petrichor_utility_mod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/boulder_spirit_spawn_egg.json
 5aba90c436ad0c177d5c0d8545f5bce0dadfaa8d assets/petrichor_utility_mod/models/item/coin.json
 a038468b53f10a1a65202b6e3a427d9f3b2970fc assets/petrichor_utility_mod/models/item/coin_bundle.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/death_knell_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/direwolf_spawn_egg.json
 18576cbacd7af2e9befea020f93e7e5865bbb2c7 assets/petrichor_utility_mod/models/item/forgotten_gravestone_block_entity.json
 ddc98f28250578e557b6ba1bf5380097c1599480 assets/petrichor_utility_mod/models/item/frog_idol.json
@@ -10,4 +11,5 @@ f1123ae60acea92c6b643a46b4f328130aa18d83 assets/petrichor_utility_mod/models/ite
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/meadow_slime_small_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/meadow_slime_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/shade_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/specter_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/petrichor_utility_mod/models/item/vengeful_gravestone_spawn_egg.json

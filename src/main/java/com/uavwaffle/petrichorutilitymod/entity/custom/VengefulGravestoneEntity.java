@@ -1,6 +1,5 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
@@ -8,10 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.Turtle;
@@ -31,7 +27,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class VengefulGravestoneEntity extends Monster implements GeoEntity {
 
 
-    private int attackAnimationTick = 0;
+    private int attackAnimationTickLength = 0;
     private boolean resting = true;
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.idle");
@@ -81,11 +77,11 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
         if (!level().isClientSide) {
             return;
         }
-        if (attackAnimationTick > 0) {
-            attackAnimationTick--;
+        if (attackAnimationTickLength > 0) {
+            attackAnimationTickLength--;
         }
 
-        if (attackAnimationTick == 0) {
+        if (attackAnimationTickLength == 0) {
             stopTriggeredAnimation("AttackController", "Attack");
         }
     }
@@ -106,7 +102,7 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
     }
 
     private void playAttackAnimation() {
-        this.attackAnimationTick = 13;
+        this.attackAnimationTickLength = 13;
         triggerAnim("AttackController", "Attack");
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
     }
@@ -117,7 +113,7 @@ public class VengefulGravestoneEntity extends Monster implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
 
-        controllers.add(new AnimationController<>(this, "Walk/Idle", 0, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
+        controllers.add(new AnimationController<>(this, "Walk/Idle", 5, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
 
 //            controllers.add( new AnimationController<>(this, "Walk/Idle", 10, state -> { //feature preview for resting transitions
 //            if (state.isMoving()) {

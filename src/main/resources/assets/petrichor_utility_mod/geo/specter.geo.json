@@ -1,0 +1,60 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Specter",
+					"pivot": [0, -2, 0],
+					"cubes": [
+						{"origin": [-5, 14, -5], "size": [10, 16, 10], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "Specter",
+					"pivot": [0, 14, -5],
+					"rotation": [12.5, 0, 0],
+					"cubes": [
+						{"origin": [-5, 8, -5], "size": [10, 6, 10], "inflate": -0.01, "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "Tail2",
+					"parent": "Tail",
+					"pivot": [0, 8, -5],
+					"rotation": [22.5, 0, 0],
+					"cubes": [
+						{"origin": [-5, -2, -5], "size": [10, 10, 10], "inflate": -0.02, "uv": [0, 60]}
+					]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "Specter",
+					"pivot": [7, 16, -8],
+					"rotation": [0, -22.5, 0],
+					"cubes": [
+						{"origin": [4, 8, -10], "size": [6, 8, 4], "uv": [48, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "RightArm",
+					"parent": "Specter",
+					"pivot": [-7, 16, -8],
+					"rotation": [0, 22.5, 0],
+					"cubes": [
+						{"origin": [-10, 8, -10], "size": [6, 8, 4], "uv": [48, 0]}
+					]
+				}
+			]
+		}
+	]
+}

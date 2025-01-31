@@ -24,22 +24,22 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class HauntEntity extends Monster implements GeoEntity {
+public class SpecterEntity extends Monster implements GeoEntity {
 
 
     private int attackAnimationTickLength = 0;
     private boolean resting = true;
 
-    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.haunt.idle");
-    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.haunt.walk");
-    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.haunt.attack");
+    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.specter.idle");
+    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.specter.walk");
+    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.specter.attack");
 //    public static final RawAnimation REST = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.rest");
 //    public static final RawAnimation RESTING = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.resting");
 //    public static final RawAnimation AWAKEN = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.awaken");
 
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    public HauntEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+    public SpecterEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -65,7 +65,6 @@ public class HauntEntity extends Monster implements GeoEntity {
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, BoulderSpiritEntity.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
-
 
     @Override
     public void aiStep() {
@@ -98,7 +97,7 @@ public class HauntEntity extends Monster implements GeoEntity {
     }
 
     private void playAttackAnimation() {
-        this.attackAnimationTickLength = 13;
+        this.attackAnimationTickLength = 9;
         triggerAnim("AttackController", "Attack");
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
     }
@@ -143,7 +142,7 @@ public class HauntEntity extends Monster implements GeoEntity {
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return 1.0f;
+        return 1.6f;
     }
 
 //    public void remove(Entity.RemovalReason pReason) { //make more entities

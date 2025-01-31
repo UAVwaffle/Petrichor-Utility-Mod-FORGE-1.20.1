@@ -28,12 +28,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> FORGOTTEN_GRAVESTONE_BLOCK_ITEM = ITEMS.register("forgotten_gravestone_block_entity",
             () -> new BlockItem(ModBlocks.FORGOTTEN_GRAVESTONE_BLOCK.get(), new Item.Properties()));
-
-
     public static final RegistryObject<Item> BOULDER_SPIRIT_SPAWN_EGG = ITEMS.register("boulder_spirit_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.BOULDER_SPIRIT, 0x615f5e, 0x1448ab,
                     new Item.Properties()));
-
     public static final RegistryObject<Item> VENGEFUL_GRAVESTONE_SPAWN_EGG = ITEMS.register("vengeful_gravestone_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.VENGEFULE_GRAVESTONE, 0x1448ab, 0x615f5e,
                     new Item.Properties()));
@@ -41,19 +38,26 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> DIREWOLF_SPAWN_EGG = ITEMS.register("direwolf_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.DIREWOLF, 0x1448ab, 0x615f5e,
+            () -> new ForgeSpawnEggItem(ModEntities.DIREWOLF, 0x2b2826, 0x701518,
                     new Item.Properties()));
     public static final RegistryObject<Item> HAUNT_SPAWN_EGG = ITEMS.register("haunt_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.HAUNT, 0x1448ab, 0x615f5e,
+            () -> new ForgeSpawnEggItem(ModEntities.HAUNT, 0x3d312b, 0x0e0c13,
                     new Item.Properties()));
     public static final RegistryObject<Item> MEADOW_SLIME_SPAWN_EGG = ITEMS.register("meadow_slime_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.MEADOW_SLIME, 0x1448ab, 0x615f5e,
+            () -> new ForgeSpawnEggItem(ModEntities.MEADOW_SLIME, 0x72c07b, 0x7fa262,
                     new Item.Properties()));
     public static final RegistryObject<Item> MEADOW_SLIME_SMALL_SPAWN_EGG = ITEMS.register("meadow_slime_small_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.MEADOW_SLIME_SMALL, 0x1448ab, 0x615f5e,
+            () -> new ForgeSpawnEggItem(ModEntities.MEADOW_SLIME_SMALL, 0x72c07b, 0xd4d8be,
                     new Item.Properties()));
     public static final RegistryObject<Item> SHADE_SPAWN_EGG = ITEMS.register("shade_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.SHADE, 0x1448ab, 0x615f5e,
+            () -> new ForgeSpawnEggItem(ModEntities.SHADE, 0x3d312b, 0xb7561f,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> DEATH_KNELL_SPAWN_EGG = ITEMS.register("death_knell_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DEATH_KNELL, 0xcfa85b, 0x703a34,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> SPECTER_SPAWN_EGG = ITEMS.register("specter_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SPECTER, 0x703a34, 0x525c6c,
                     new Item.Properties()));
 
 
