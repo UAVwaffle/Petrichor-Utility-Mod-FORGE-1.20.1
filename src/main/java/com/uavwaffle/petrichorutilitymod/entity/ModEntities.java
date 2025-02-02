@@ -61,6 +61,34 @@ public class ModEntities {
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "specter").toString()));
 
 
+
+    public static final RegistryObject<EntityType<CursedDollEntity>> CURSED_DOLL =
+            ENTITY_TYPES.register("cursed_doll",
+                    () -> EntityType.Builder.of(CursedDollEntity::new, MobCategory.MONSTER)
+                            .sized(0.7f, 1.9f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "cursed_doll").toString()));
+    public static final RegistryObject<EntityType<NamelessEntity>> NAMELESS =
+            ENTITY_TYPES.register("nameless",
+                    () -> EntityType.Builder.of(NamelessEntity::new, MobCategory.MONSTER)
+                            .sized(0.7f, 1.9f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "nameless").toString()));
+    public static final RegistryObject<EntityType<ShroominEntity>> SHROOMIN =
+            ENTITY_TYPES.register("shroomin",
+                    () -> EntityType.Builder.of(ShroominEntity::new, MobCategory.MONSTER)
+                            .sized(0.7f, 1.6f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "shroomin").toString()));
+    public static final RegistryObject<EntityType<SpriteEntity>> SPRITE =
+            ENTITY_TYPES.register("sprite",
+                    () -> EntityType.Builder.of(SpriteEntity::new, MobCategory.MONSTER)
+                            .sized(0.5f, 0.8f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "sprite").toString()));
+    public static final RegistryObject<EntityType<WillOWispEntity>> WILL_O_WISP =
+            ENTITY_TYPES.register("will_o_wisp",
+                    () -> EntityType.Builder.of(WillOWispEntity::new, MobCategory.MONSTER)
+                            .sized(0.5f, 1.6f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "will_o_wisp").toString()));
+
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

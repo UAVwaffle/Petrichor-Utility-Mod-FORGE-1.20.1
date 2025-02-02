@@ -2,6 +2,8 @@ package com.uavwaffle.petrichorutilitymod.entity.client.model;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.entity.custom.SpecterEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.WillOWispEntity;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 
@@ -27,5 +29,10 @@ public class SpecterModel extends GeoModel<SpecterEntity> {
     @Override
     public ResourceLocation getAnimationResource(SpecterEntity object) {
         return this.animations;
+    }
+
+    @Override
+    public RenderType getRenderType(SpecterEntity animatable, ResourceLocation texture) {
+        return RenderType.entityTranslucent(getTextureResource(animatable));
     }
 }

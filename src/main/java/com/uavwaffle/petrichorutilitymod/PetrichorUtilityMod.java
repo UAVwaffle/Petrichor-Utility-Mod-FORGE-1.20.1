@@ -145,11 +145,14 @@ public class PetrichorUtilityMod {
             EntityRenderers.register(ModEntities.MEADOW_SLIME.get(), MeadowSlimeRenderer::new);
             EntityRenderers.register(ModEntities.MEADOW_SLIME_SMALL.get(), MeadowSlimeSmallRenderer::new);
             EntityRenderers.register(ModEntities.SHADE.get(), ShadeRenderer::new);
-
-
             EntityRenderers.register(ModEntities.DEATH_KNELL.get(), DeathKnellRenderer::new);
             EntityRenderers.register(ModEntities.SPECTER.get(), SpecterRenderer::new);
 
+            EntityRenderers.register(ModEntities.CURSED_DOLL.get(), CursedDollRenderer::new);
+            EntityRenderers.register(ModEntities.NAMELESS.get(), NamelessRenderer::new);
+            EntityRenderers.register(ModEntities.SHROOMIN.get(), ShroominRenderer::new);
+            EntityRenderers.register(ModEntities.SPRITE.get(), SpriteRenderer::new);
+            EntityRenderers.register(ModEntities.WILL_O_WISP.get(), WillOWispRenderer::new);
 
         }
     }

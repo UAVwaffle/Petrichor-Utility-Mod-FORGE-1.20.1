@@ -34,9 +34,6 @@ public class ModItems {
     public static final RegistryObject<Item> VENGEFUL_GRAVESTONE_SPAWN_EGG = ITEMS.register("vengeful_gravestone_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.VENGEFULE_GRAVESTONE, 0x1448ab, 0x615f5e,
                     new Item.Properties()));
-
-
-
     public static final RegistryObject<Item> DIREWOLF_SPAWN_EGG = ITEMS.register("direwolf_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DIREWOLF, 0x2b2826, 0x701518,
                     new Item.Properties()));
@@ -52,12 +49,28 @@ public class ModItems {
     public static final RegistryObject<Item> SHADE_SPAWN_EGG = ITEMS.register("shade_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SHADE, 0x3d312b, 0xb7561f,
                     new Item.Properties()));
-
     public static final RegistryObject<Item> DEATH_KNELL_SPAWN_EGG = ITEMS.register("death_knell_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DEATH_KNELL, 0xcfa85b, 0x703a34,
                     new Item.Properties()));
     public static final RegistryObject<Item> SPECTER_SPAWN_EGG = ITEMS.register("specter_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SPECTER, 0x703a34, 0x525c6c,
+                    new Item.Properties()));
+
+
+    public static final RegistryObject<Item> CURSED_DOLL_SPAWN_EGG = ITEMS.register("cursed_doll_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CURSED_DOLL, 0x703a34, 0x525c6c,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> NAMELESS_SPAWN_EGG = ITEMS.register("nameless_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.NAMELESS, 0x703a34, 0x525c6c,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> SHROOMIN_SPAWN_EGG = ITEMS.register("shroomin_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SHROOMIN, 0x703a34, 0x525c6c,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> SPRITE_SPAWN_EGG = ITEMS.register("sprite_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SPRITE, 0x703a34, 0x525c6c,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> WILL_O_WISP_SPAWN_EGG = ITEMS.register("will_o_wisp_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.WILL_O_WISP, 0x703a34, 0x525c6c,
                     new Item.Properties()));
 
 

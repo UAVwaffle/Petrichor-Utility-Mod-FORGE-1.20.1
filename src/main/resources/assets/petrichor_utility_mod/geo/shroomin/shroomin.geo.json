@@ -1,0 +1,81 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Shroomin",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "Shroomin",
+					"pivot": [0, 4, 0],
+					"cubes": [
+						{"origin": [-4, 4, -4], "size": [8, 14, 8], "uv": [0, 40]}
+					]
+				},
+				{
+					"name": "Hat",
+					"parent": "Body",
+					"pivot": [0, 17, 0],
+					"rotation": [-7.5, 0, 0],
+					"cubes": [
+						{"origin": [-7, 17, -7], "size": [14, 4, 14], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "Hat2",
+					"parent": "Hat",
+					"pivot": [0, 21, -6],
+					"rotation": [-7.5, 0, 0],
+					"cubes": [
+						{"origin": [-6, 21, -6], "size": [12, 3, 12], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "Body",
+					"pivot": [4, 9, 0],
+					"rotation": [0, 0, -22.5],
+					"cubes": [
+						{"origin": [4, 5, -1.5], "size": [3, 6, 3], "pivot": [4, 9, 0], "rotation": [0, -7.5, 0], "uv": [33, 40], "mirror": true}
+					]
+				},
+				{
+					"name": "RightArm",
+					"parent": "Body",
+					"pivot": [-4, 9, 0],
+					"rotation": [0, 0, 22.5],
+					"cubes": [
+						{"origin": [-7, 5, -1.5], "size": [3, 6, 3], "pivot": [-4, 9, 0], "rotation": [0, 7.5, 0], "uv": [33, 40]}
+					]
+				},
+				{
+					"name": "LeftLeg",
+					"parent": "Shroomin",
+					"pivot": [2.5, 4, 0],
+					"cubes": [
+						{"origin": [1, 0, -1.5], "size": [3, 4, 3], "pivot": [2.5, 4, 0], "rotation": [0, -7.5, 0], "uv": [0, 64], "mirror": true}
+					]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "Shroomin",
+					"pivot": [-2.5, 4, 0],
+					"cubes": [
+						{"origin": [-4, 0, -1.5], "size": [3, 4, 3], "pivot": [-2.5, 4, 0], "rotation": [0, 7.5, 0], "uv": [0, 64]}
+					]
+				}
+			]
+		}
+	]
+}

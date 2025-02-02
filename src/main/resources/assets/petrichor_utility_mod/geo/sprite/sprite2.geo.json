@@ -1,0 +1,82 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "WoodSprite",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "WoodSprite",
+					"pivot": [0, -1.5, 0],
+					"cubes": [
+						{"origin": [-2, 3.5, -1.5], "size": [4, 3, 3], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Body",
+					"pivot": [0, 7, 0],
+					"cubes": [
+						{"origin": [-2.5, 7, -2.5], "size": [5, 7, 5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Leaf",
+					"parent": "Head",
+					"pivot": [0, 9.5, -3],
+					"rotation": [0, 0, -5],
+					"cubes": [
+						{"origin": [-5.5, 6, -3], "size": [11, 11, 0], "uv": [32, 0]}
+					]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "Body",
+					"pivot": [2.5, 5.5, 0],
+					"rotation": [0, 0, -7.5],
+					"cubes": [
+						{"origin": [2.5, 0.5, -1], "size": [1, 6, 2], "uv": [0, 32], "mirror": true}
+					]
+				},
+				{
+					"name": "RightArm",
+					"parent": "Body",
+					"pivot": [-2.5, 5.5, 0],
+					"rotation": [0, 0, 7.5],
+					"cubes": [
+						{"origin": [-3.5, 0.5, -1], "size": [1, 6, 2], "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "LeftLeg",
+					"parent": "WoodSprite",
+					"pivot": [1.25, 3, 0],
+					"rotation": [0, -7.5, 0],
+					"cubes": [
+						{"origin": [0.25, 0, -1], "size": [2, 3, 2], "uv": [0, 48], "mirror": true}
+					]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "WoodSprite",
+					"pivot": [-1.25, 3, 0],
+					"rotation": [0, 7.5, 0],
+					"cubes": [
+						{"origin": [-2.25, 0, -1], "size": [2, 3, 2], "uv": [0, 48]}
+					]
+				}
+			]
+		}
+	]
+}
