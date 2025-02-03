@@ -1,5 +1,5 @@
 {
-  "required": true,
+  "required": false,
   "minVersion": "0.8",
   "package": "com.uavwaffle.petrichor_utility_mod.mixin",
   "compatibilityLevel": "JAVA_8",
