@@ -59,9 +59,6 @@ public class ModEntities {
                     () -> EntityType.Builder.of(SpecterEntity::new, MobCategory.MONSTER)
                             .sized(0.7f, 1.9f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "specter").toString()));
-
-
-
     public static final RegistryObject<EntityType<CursedDollEntity>> CURSED_DOLL =
             ENTITY_TYPES.register("cursed_doll",
                     () -> EntityType.Builder.of(CursedDollEntity::new, MobCategory.MONSTER)

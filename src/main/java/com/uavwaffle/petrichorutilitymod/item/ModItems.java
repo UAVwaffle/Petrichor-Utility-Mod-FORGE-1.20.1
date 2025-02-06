@@ -28,11 +28,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> FORGOTTEN_GRAVESTONE_BLOCK_ITEM = ITEMS.register("forgotten_gravestone_block_entity",
             () -> new BlockItem(ModBlocks.FORGOTTEN_GRAVESTONE_BLOCK.get(), new Item.Properties()));
+
+
     public static final RegistryObject<Item> BOULDER_SPIRIT_SPAWN_EGG = ITEMS.register("boulder_spirit_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.BOULDER_SPIRIT, 0x615f5e, 0x1448ab,
                     new Item.Properties()));
     public static final RegistryObject<Item> VENGEFUL_GRAVESTONE_SPAWN_EGG = ITEMS.register("vengeful_gravestone_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.VENGEFULE_GRAVESTONE, 0x1448ab, 0x615f5e,
+            () -> new ForgeSpawnEggItem(ModEntities.VENGEFULE_GRAVESTONE, 0x615f5e, 0x703a34,
                     new Item.Properties()));
     public static final RegistryObject<Item> DIREWOLF_SPAWN_EGG = ITEMS.register("direwolf_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DIREWOLF, 0x2b2826, 0x701518,
@@ -55,8 +57,6 @@ public class ModItems {
     public static final RegistryObject<Item> SPECTER_SPAWN_EGG = ITEMS.register("specter_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SPECTER, 0x703a34, 0x525c6c,
                     new Item.Properties()));
-
-
     public static final RegistryObject<Item> CURSED_DOLL_SPAWN_EGG = ITEMS.register("cursed_doll_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CURSED_DOLL, 0x915642, 0xc28b44,
                     new Item.Properties()));

@@ -147,7 +147,6 @@ public class PetrichorUtilityMod {
             EntityRenderers.register(ModEntities.SHADE.get(), ShadeRenderer::new);
             EntityRenderers.register(ModEntities.DEATH_KNELL.get(), DeathKnellRenderer::new);
             EntityRenderers.register(ModEntities.SPECTER.get(), SpecterRenderer::new);
-
             EntityRenderers.register(ModEntities.CURSED_DOLL.get(), CursedDollRenderer::new);
             EntityRenderers.register(ModEntities.NAMELESS.get(), NamelessRenderer::new);
             EntityRenderers.register(ModEntities.SHROOMIN.get(), ShroominRenderer::new);

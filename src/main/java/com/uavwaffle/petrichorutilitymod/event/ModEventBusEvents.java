@@ -21,7 +21,6 @@ public class ModEventBusEvents {
         event.put(ModEntities.SHADE.get(), ShadeEntity.createAttributes().build());
         event.put(ModEntities.DEATH_KNELL.get(), DeathKnellEntity.createAttributes().build());
         event.put(ModEntities.SPECTER.get(), SpecterEntity.createAttributes().build());
-
         event.put(ModEntities.CURSED_DOLL.get(), CursedDollEntity.createAttributes().build());
         event.put(ModEntities.NAMELESS.get(), NamelessEntity.createAttributes().build());
         event.put(ModEntities.SHROOMIN.get(), ShroominEntity.createAttributes().build());
