@@ -1,5 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
@@ -16,7 +17,6 @@ import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -24,18 +24,15 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class NamelessEntity extends Monster implements GeoEntity {
-
-
-    private int attackAnimationTickLength = 0;
+public class NamelessEntity extends PetrichorAttackingEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.nameless.idle");
-    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.nameless.attack");
+    public static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenLoop("animation.nameless.attack");
 
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public NamelessEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+        super(pEntityType, pLevel, ATTACK_ANIMATION, 41);
     }
 
     public static AttributeSupplier.Builder createAttributes(){
@@ -59,41 +56,7 @@ public class NamelessEntity extends Monster implements GeoEntity {
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
 
-    @Override
-    public void aiStep() {
-        super.aiStep();
-        if (!level().isClientSide) {
-            return;
-        }
-        if (attackAnimationTickLength > 0) {
-            attackAnimationTickLength--;
-        }
 
-        if (attackAnimationTickLength == 0) {
-            stopTriggeredAnimation("AttackController", "Attack");
-        }
-    }
-
-    @Override
-    public boolean doHurtTarget(@NotNull Entity pEntity) {
-        this.level().broadcastEntityEvent(this, (byte)4);
-        return super.doHurtTarget(pEntity);
-    }
-
-    public void handleEntityEvent(byte pId) {
-        if (pId == 4) {
-            playAttackAnimation();
-        } else {
-            super.handleEntityEvent(pId);
-        }
-
-    }
-
-    private void playAttackAnimation() {
-        this.attackAnimationTickLength = 41;
-        triggerAnim("AttackController", "Attack");
-        this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
-    }
 
 
 
@@ -103,29 +66,9 @@ public class NamelessEntity extends Monster implements GeoEntity {
 
         controllers.add(new AnimationController<>(this, "Walk/Idle", 5, state -> state.setAndContinue(IDLE)));
 
-//            controllers.add( new AnimationController<>(this, "Walk/Idle", 10, state -> { //feature preview for resting transitions
-//            if (state.isMoving()) {
-//                resting = false;
-//                return state.setAndContinue(WALK);
-//            }
-//            if (resting) {
-//                return state.setAndContinue(RESTING);
-//            }
-//            return state.setAndContinue(IDLE);
-//
-//            }));
 
-        controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK));
+        controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK_ANIMATION));
 
-//        controllers.add( new AnimationController<>(this, "Attack", 0, state -> { //Only works for animations less than 6 ticks
-//            if (this.swinging) {
-//                return state.setAndContinue(ATTACK);
-//            }
-//
-//            state.getController().forceAnimationReset();
-//            return PlayState.STOP;
-//
-//        }));
     }
 
     @Override

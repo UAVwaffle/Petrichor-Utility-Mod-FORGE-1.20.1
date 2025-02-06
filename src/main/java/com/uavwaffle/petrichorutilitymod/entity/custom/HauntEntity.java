@@ -1,7 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.Entity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -15,7 +14,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -24,23 +22,16 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class HauntEntity extends Monster implements GeoEntity {
-
-
-    private int attackAnimationTickLength = 0;
-    private boolean resting = true;
+public class HauntEntity extends PetrichorAttackingEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.haunt.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.haunt.walk");
-    public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.haunt.attack");
-//    public static final RawAnimation REST = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.rest");
-//    public static final RawAnimation RESTING = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.resting");
-//    public static final RawAnimation AWAKEN = RawAnimation.begin().thenLoop("animation.vengeful_gravestone_entity.awaken");
+    public static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenLoop("animation.haunt.attack");
 
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public HauntEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+        super(pEntityType, pLevel, ATTACK_ANIMATION, 13);
     }
 
     public static AttributeSupplier.Builder createAttributes(){
@@ -67,73 +58,14 @@ public class HauntEntity extends Monster implements GeoEntity {
     }
 
 
-    @Override
-    public void aiStep() {
-        super.aiStep();
-        if (!level().isClientSide) {
-            return;
-        }
-        if (attackAnimationTickLength > 0) {
-            attackAnimationTickLength--;
-        }
-
-        if (attackAnimationTickLength == 0) {
-            stopTriggeredAnimation("AttackController", "Attack");
-        }
-    }
-
-    @Override
-    public boolean doHurtTarget(@NotNull Entity pEntity) {
-        this.level().broadcastEntityEvent(this, (byte)4);
-        return super.doHurtTarget(pEntity);
-    }
-
-    public void handleEntityEvent(byte pId) {
-        if (pId == 4) {
-            playAttackAnimation();
-        } else {
-            super.handleEntityEvent(pId);
-        }
-
-    }
-
-    private void playAttackAnimation() {
-        this.attackAnimationTickLength = 13;
-        triggerAnim("AttackController", "Attack");
-        this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
-    }
-
-
 
         @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
 
         controllers.add(new AnimationController<>(this, "Walk/Idle", 5, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
+        controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK_ANIMATION));
 
-//            controllers.add( new AnimationController<>(this, "Walk/Idle", 10, state -> { //feature preview for resting transitions
-//            if (state.isMoving()) {
-//                resting = false;
-//                return state.setAndContinue(WALK);
-//            }
-//            if (resting) {
-//                return state.setAndContinue(RESTING);
-//            }
-//            return state.setAndContinue(IDLE);
-//
-//            }));
-
-        controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK));
-
-//        controllers.add( new AnimationController<>(this, "Attack", 0, state -> { //Only works for animations less than 6 ticks
-//            if (this.swinging) {
-//                return state.setAndContinue(ATTACK);
-//            }
-//
-//            state.getController().forceAnimationReset();
-//            return PlayState.STOP;
-//
-//        }));
     }
 
     @Override
@@ -145,29 +77,4 @@ public class HauntEntity extends Monster implements GeoEntity {
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return 1.0f;
     }
-
-//    public void remove(Entity.RemovalReason pReason) { //make more entities
-//        if (!this.level().isClientSide && this.isDeadOrDying()) {
-//            Component component = this.getCustomName();
-//            boolean flag = this.isNoAi();
-//            int k = this.random.nextInt(2) + 1;
-//
-//            for(int l = 0; l < k; ++l) {
-//                VengefulGravestoneEntity slime = (VengefulGravestoneEntity) getType().create(level());
-//                if (slime != null) {
-//                    if (this.isPersistenceRequired()) {
-//                        slime.setPersistenceRequired();
-//                    }
-//
-//                    slime.setCustomName(component);
-//                    slime.setNoAi(flag);
-//                    slime.setInvulnerable(this.isInvulnerable());
-//                    slime.moveTo(this.getX(), this.getY() + 0.5D, this.getZ(), this.random.nextFloat() * 360.0F, 0.0F);
-//                    this.level().addFreshEntity(slime);
-//                }
-//            }
-//        }
-//
-//        super.remove(pReason);
-//    }
 }
