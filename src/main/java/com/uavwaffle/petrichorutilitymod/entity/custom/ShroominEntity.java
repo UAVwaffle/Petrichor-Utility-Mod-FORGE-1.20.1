@@ -55,7 +55,7 @@ public class ShroominEntity extends Monster implements GeoEntity {
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
                 .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.ATTACK_SPEED, 0.5f)
+                .add(Attributes.ATTACK_SPEED, 2.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.25f);
     }
 
@@ -106,7 +106,7 @@ public class ShroominEntity extends Monster implements GeoEntity {
     }
 
     private void playAttackAnimation() {
-        this.attackAnimationTickLength = 9;
+        this.attackAnimationTickLength = 13;
         triggerAnim("AttackController", "Attack");
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
     }

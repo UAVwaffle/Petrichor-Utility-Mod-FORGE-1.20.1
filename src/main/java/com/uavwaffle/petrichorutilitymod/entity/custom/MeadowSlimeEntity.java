@@ -45,7 +45,7 @@ public class MeadowSlimeEntity extends Monster implements GeoEntity {
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
                 .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.ATTACK_SPEED, 0.5f)
+                .add(Attributes.ATTACK_SPEED, 0.75f)
                 .add(Attributes.MOVEMENT_SPEED, 0.25f);
     }
 

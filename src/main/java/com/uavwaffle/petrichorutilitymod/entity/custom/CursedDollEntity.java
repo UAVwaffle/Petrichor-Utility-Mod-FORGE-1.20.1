@@ -27,8 +27,10 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class CursedDollEntity extends Monster implements GeoEntity {
 
 
-    private int attackAnimationTickLength = 0;
-    private boolean resting = true;
+    private final int attackAnimationTickLength = 31;
+    private int attackAnimationTick = 0;
+
+    private boolean attacking = false;
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.cursed_doll.idle");
     public static final RawAnimation ATTACK = RawAnimation.begin().thenLoop("animation.cursed_doll.attack");
@@ -42,7 +44,7 @@ public class CursedDollEntity extends Monster implements GeoEntity {
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
                 .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.ATTACK_SPEED, 0.5f)
+                .add(Attributes.ATTACK_SPEED, 0.666f)
                 .add(Attributes.MOVEMENT_SPEED, 0.25f);
     }
 
@@ -63,22 +65,27 @@ public class CursedDollEntity extends Monster implements GeoEntity {
     @Override
     public void aiStep() {
         super.aiStep();
-        if (!level().isClientSide) {
-            return;
-        }
-        if (attackAnimationTickLength > 0) {
-            attackAnimationTickLength--;
+        if (attackAnimationTick > 0) {
+            attackAnimationTick--;
+            attacking = true;
         }
 
-        if (attackAnimationTickLength == 0) {
+
+
+        if (attackAnimationTick == 0) {
+            attacking = false;
             stopTriggeredAnimation("AttackController", "Attack");
         }
     }
 
     @Override
     public boolean doHurtTarget(@NotNull Entity pEntity) {
-        this.level().broadcastEntityEvent(this, (byte)4);
-        return super.doHurtTarget(pEntity);
+        if (!attacking) {
+            this.level().broadcastEntityEvent(this, (byte)4);
+            this.attackAnimationTick = attackAnimationTickLength;
+            return super.doHurtTarget(pEntity);//this should be called at the halfway mark of attack animation tick
+        }
+        return false;
     }
 
     public void handleEntityEvent(byte pId) {
@@ -91,7 +98,7 @@ public class CursedDollEntity extends Monster implements GeoEntity {
     }
 
     private void playAttackAnimation() {
-        this.attackAnimationTickLength = 9;
+        this.attackAnimationTick = attackAnimationTickLength;
         triggerAnim("AttackController", "Attack");
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
     }
