@@ -2,11 +2,9 @@ package com.uavwaffle.petrichorutilitymod.item;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
-import com.uavwaffle.petrichorutilitymod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,13 +19,13 @@ public class CreativeTabs {
 
     // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> PETRICHOR_TAB = CREATIVE_MODE_TABS.register("petrichor_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FROG_IDOL.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FROG_INGOT.get()))
             .title(Component.translatable("creativetab.petrichor_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.COIN.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-                output.accept(ModItems.COIN_BUNDLE.get());
-                output.accept(ModItems.LARGE_COIN_BUNDLE.get());
-                output.accept(ModItems.FROG_IDOL.get());
+                output.accept(ModItems.TEN_COIN.get());
+                output.accept(ModItems.HUNDRED_COIN.get());
+                output.accept(ModItems.FROG_INGOT.get());
 
                 output.accept(ModItems.FORGOTTEN_GRAVESTONE_BLOCK_ITEM.get());
 

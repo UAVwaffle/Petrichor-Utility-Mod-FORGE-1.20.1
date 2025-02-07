@@ -3,6 +3,10 @@ package com.uavwaffle.petrichorutilitymod.item;
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
+import com.uavwaffle.petrichorutilitymod.item.custom.Coin;
+import com.uavwaffle.petrichorutilitymod.item.custom.FrogIngot;
+import com.uavwaffle.petrichorutilitymod.item.custom.HundredCoin;
+import com.uavwaffle.petrichorutilitymod.item.custom.TenCoin;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -17,13 +21,13 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, PetrichorUtilityMod.MODID);
 
     public static final RegistryObject<Item> COIN = ITEMS.register("coin",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> COIN_BUNDLE = ITEMS.register("coin_bundle",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> LARGE_COIN_BUNDLE = ITEMS.register("large_coin_bundle",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> FROG_IDOL = ITEMS.register("frog_idol",
-            () -> new Item(new Item.Properties()));
+            () -> new Coin(new Item.Properties()));//PROBLEM: I need to pass in the items for it to convert to and from, but they have not been registered yet
+    public static final RegistryObject<Item> TEN_COIN = ITEMS.register("ten_coin",
+            () -> new TenCoin(new Item.Properties()));
+    public static final RegistryObject<Item> HUNDRED_COIN = ITEMS.register("hundred_coin",
+            () -> new HundredCoin(new Item.Properties()));
+    public static final RegistryObject<Item> FROG_INGOT = ITEMS.register("frog_ingot",
+            () -> new FrogIngot(new Item.Properties()));
 
 
     public static final RegistryObject<Item> FORGOTTEN_GRAVESTONE_BLOCK_ITEM = ITEMS.register("forgotten_gravestone_block_entity",

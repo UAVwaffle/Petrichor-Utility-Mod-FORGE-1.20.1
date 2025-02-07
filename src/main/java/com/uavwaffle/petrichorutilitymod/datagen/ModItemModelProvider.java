@@ -18,9 +18,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.COIN);
-        simpleItem(ModItems.COIN_BUNDLE);
-        simpleItem(ModItems.LARGE_COIN_BUNDLE);
-        simpleItem(ModItems.FROG_IDOL);
+        simpleItem(ModItems.TEN_COIN);
+        simpleItem(ModItems.HUNDRED_COIN);
+        simpleItem(ModItems.FROG_INGOT);
         simpleItem(ModItems.FORGOTTEN_GRAVESTONE_BLOCK_ITEM);
 
         withExistingParent(ModItems.BOULDER_SPIRIT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
