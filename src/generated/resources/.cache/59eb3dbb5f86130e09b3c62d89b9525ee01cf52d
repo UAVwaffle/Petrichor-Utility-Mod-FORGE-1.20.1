@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-02T15:04:46.2041447	Loot Tables
+// 1.20.1	2025-02-07T19:20:02.744058	Loot Tables
 f3388dd43f212d42c5de6e786b742d55c4b9b87e data/petrichor_utility_mod/loot_tables/blocks/alexandrite_block.json
 12a8994290ebaced30e000ededa8acbf7448db51 data/petrichor_utility_mod/loot_tables/blocks/forgotten_gravestone_block_entity.json
 835597e0ed6846a41c50bd124d7ebe2343c99000 data/petrichor_utility_mod/loot_tables/blocks/raw_alexandrite_block.json
@@ -6,6 +6,7 @@ f3388dd43f212d42c5de6e786b742d55c4b9b87e data/petrichor_utility_mod/loot_tables/
 329998fb78e6404c761b3ec65699c1189a5db0b9 data/petrichor_utility_mod/loot_tables/entities/cursed_doll.json
 6ce279f6752f3fd270326cd71785f25db5588208 data/petrichor_utility_mod/loot_tables/entities/death_knell.json
 88d354d3114766be8a9ad06628c204d44000e57e data/petrichor_utility_mod/loot_tables/entities/direwolf.json
+dac68faba22669bc739d0d1b40f6e25298303990 data/petrichor_utility_mod/loot_tables/entities/fallen_star.json
 d09a528f077298866636285974fc3153867fde5c data/petrichor_utility_mod/loot_tables/entities/haunt.json
 7dfe394cd0cbc153497f31e24129838b7151b545 data/petrichor_utility_mod/loot_tables/entities/meadow_slime.json
 8388a33539b70b3d2061f973cc1916b9c72ef1c8 data/petrichor_utility_mod/loot_tables/entities/meadow_slime_small.json
@@ -15,4 +16,5 @@ a88eb8304ce3980b53e9eac7561e583c8e72f06b data/petrichor_utility_mod/loot_tables/
 f8b1da96c537b248cc02b382e7ae116659f544e2 data/petrichor_utility_mod/loot_tables/entities/specter.json
 95131e00492c8b4369f45019d1d6b8bd589b2d02 data/petrichor_utility_mod/loot_tables/entities/sprite.json
 1ccac248e8a69d0a2660e53e0b93d4018fc60cd8 data/petrichor_utility_mod/loot_tables/entities/vengeful_gravestone.json
+fc188c507502244568df432f6efcc8f1a242db92 data/petrichor_utility_mod/loot_tables/entities/wandering_lantern.json
 e1ba3d8b6d0a7209e6065826b1214e374eb98522 data/petrichor_utility_mod/loot_tables/entities/will_o_wisp.json

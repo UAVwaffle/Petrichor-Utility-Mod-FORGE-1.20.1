@@ -38,14 +38,13 @@ public class CreativeTabs {
                 output.accept(ModItems.SHADE_SPAWN_EGG.get());
                 output.accept(ModItems.DEATH_KNELL_SPAWN_EGG.get());
                 output.accept(ModItems.SPECTER_SPAWN_EGG.get());
-
-
-
                 output.accept(ModItems.CURSED_DOLL_SPAWN_EGG.get());
                 output.accept(ModItems.NAMELESS_SPAWN_EGG.get());
                 output.accept(ModItems.SHROOMIN_SPAWN_EGG.get());
                 output.accept(ModItems.SPRITE_SPAWN_EGG.get());
                 output.accept(ModItems.WILL_O_WISP_SPAWN_EGG.get());
+                output.accept(ModItems.WANDERING_LANTERN_SPAWN_EGG.get());
+                output.accept(ModItems.FALLEN_STAR_SPAWN_EGG.get());
 
 
 

@@ -18,6 +18,9 @@
   "item.petrichor_utility_mod.shroomin_spawn_egg": "Shroomin Spawn Egg",
   "item.petrichor_utility_mod.sprite_spawn_egg": "Sprite Spawn Egg",
   "item.petrichor_utility_mod.will_o_wisp_spawn_egg": "Will O Wisp Spawn Egg",
+  "item.petrichor_utility_mod.wandering_lantern_spawn_egg": "Wandering Lantern Spawn Egg",
+  "item.petrichor_utility_mod.fallen_star_spawn_egg": "Fallen Star Spawn Egg",
+
 
 
   "block.petrichor_utility_mod.forgotten_gravestone_block_entity": "Forgotten Gravestone",
@@ -40,6 +43,9 @@
   "entity.petrichor_utility_mod.shroomin": "Shroomin",
   "entity.petrichor_utility_mod.sprite": "Sprite",
   "entity.petrichor_utility_mod.will_o_wisp": "Will O Wisp",
+  "entity.petrichor_utility_mod.wandering_lantern": "Wandering Lantern",
+  "entity.petrichor_utility_mod.fallen_star": "Fallen Star",
+
 
 
 

@@ -26,6 +26,9 @@ public class ModEventBusEvents {
         event.put(ModEntities.SHROOMIN.get(), ShroominEntity.createAttributes().build());
         event.put(ModEntities.SPRITE.get(), SpriteEntity.createAttributes().build());
         event.put(ModEntities.WILL_O_WISP.get(), WillOWispEntity.createAttributes().build());
+        event.put(ModEntities.WANDERING_LANTERN.get(), WanderingLanternEntity.createAttributes().build());
+        event.put(ModEntities.FALLEN_STAR.get(), FallenStarEntity.createAttributes().build());
+
 
     }
 }

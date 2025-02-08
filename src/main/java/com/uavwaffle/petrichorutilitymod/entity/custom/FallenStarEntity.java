@@ -22,23 +22,21 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class HauntEntity extends PetrichorAttackingEntity {
+public class FallenStarEntity extends Monster implements GeoEntity {
 
-    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.haunt.idle");
-    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.haunt.walk");
-    public static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenLoop("animation.haunt.attack");
+    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.fallen_star.idle");
+    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.fallen_star.walk");
 
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    public HauntEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel, ATTACK_ANIMATION, 13);
+    public FallenStarEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
     }
 
     public static AttributeSupplier.Builder createAttributes(){
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
-                .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.ATTACK_SPEED, 0.6f)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f);
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 1.0D)
+                .add(Attributes.ATTACK_DAMAGE, 1.0f)
+                .add(Attributes.MOVEMENT_SPEED, 1.25f);
     }
 
     protected void registerGoals() {
@@ -59,12 +57,11 @@ public class HauntEntity extends PetrichorAttackingEntity {
 
 
 
-        @Override
+    @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
 
         controllers.add(new AnimationController<>(this, "Walk/Idle", 5, state -> state.setAndContinue(state.isMoving() ? WALK : IDLE)));
-        controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK_ANIMATION));
 
     }
 
@@ -75,6 +72,6 @@ public class HauntEntity extends PetrichorAttackingEntity {
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return 1.3f;
+        return 0.7f;
     }
 }

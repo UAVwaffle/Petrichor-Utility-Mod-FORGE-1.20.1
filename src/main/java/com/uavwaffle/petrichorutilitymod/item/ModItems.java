@@ -76,6 +76,12 @@ public class ModItems {
     public static final RegistryObject<Item> WILL_O_WISP_SPAWN_EGG = ITEMS.register("will_o_wisp_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.WILL_O_WISP, 0x22c2ff, 0x4df8ee,
                     new Item.Properties()));
+    public static final RegistryObject<Item> WANDERING_LANTERN_SPAWN_EGG = ITEMS.register("wandering_lantern_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.WANDERING_LANTERN, 0xe9da8a, 0x703a34,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> FALLEN_STAR_SPAWN_EGG = ITEMS.register("fallen_star_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.FALLEN_STAR, 0x60caf6, 0xffff9c,
+                    new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

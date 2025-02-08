@@ -32,7 +32,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<HauntEntity>> HAUNT =
             ENTITY_TYPES.register("haunt",
                     () -> EntityType.Builder.of(HauntEntity::new, MobCategory.MONSTER)
-                            .sized(0.7f, 1.4f)
+                            .sized(0.7f, 1.6f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "haunt").toString()));
     public static final RegistryObject<EntityType<MeadowSlimeEntity>> MEADOW_SLIME =
             ENTITY_TYPES.register("meadow_slime",
@@ -84,7 +84,16 @@ public class ModEntities {
                     () -> EntityType.Builder.of(WillOWispEntity::new, MobCategory.MONSTER)
                             .sized(0.5f, 1.6f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "will_o_wisp").toString()));
-
+    public static final RegistryObject<EntityType<WanderingLanternEntity>> WANDERING_LANTERN =
+            ENTITY_TYPES.register("wandering_lantern",
+                    () -> EntityType.Builder.of(WanderingLanternEntity::new, MobCategory.MONSTER)
+                            .sized(1.5f, 2.9f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "wandering_lantern").toString()));
+    public static final RegistryObject<EntityType<FallenStarEntity>> FALLEN_STAR =
+            ENTITY_TYPES.register("fallen_star",
+                    () -> EntityType.Builder.of(FallenStarEntity::new, MobCategory.MONSTER)
+                            .sized(0.3f, 0.8f)
+                            .build(new ResourceLocation(PetrichorUtilityMod.MODID, "fallen_star").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

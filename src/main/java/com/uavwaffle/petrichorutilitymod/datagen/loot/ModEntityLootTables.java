@@ -77,7 +77,6 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
 
-
         add(ModEntities.CURSED_DOLL.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
@@ -99,6 +98,16 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
 
         add(ModEntities.WILL_O_WISP.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+
+        add(ModEntities.WANDERING_LANTERN.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ModItems.COIN.get()))));
+
+        add(ModEntities.FALLEN_STAR.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));

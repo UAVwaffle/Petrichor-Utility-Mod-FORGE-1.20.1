@@ -14,7 +14,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -22,22 +21,22 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class HauntEntity extends PetrichorAttackingEntity {
+public class WanderingLanternEntity extends PetrichorAttackingEntity {
 
-    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.haunt.idle");
-    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.haunt.walk");
-    public static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenLoop("animation.haunt.attack");
+    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.wandering_lantern.idle");
+    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.wandering_lantern.walk");
+    public static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenLoop("animation.wandering_lantern.attack");
 
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    public HauntEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel, ATTACK_ANIMATION, 13);
+    public WanderingLanternEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel, ATTACK_ANIMATION, 17);
     }
 
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
                 .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.ATTACK_SPEED, 0.6f)
+                .add(Attributes.ATTACK_SPEED, 0.7f)
                 .add(Attributes.MOVEMENT_SPEED, 0.25f);
     }
 
@@ -75,6 +74,6 @@ public class HauntEntity extends PetrichorAttackingEntity {
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return 1.3f;
+        return 2.5f;
     }
 }

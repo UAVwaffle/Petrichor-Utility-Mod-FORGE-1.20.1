@@ -132,8 +132,6 @@ public class PetrichorUtilityMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
 
             BlockEntityRenderers.register(ModBlockEntities.FORGOTTEN_GRAVESTONE_BLOCK_ENTITY.get(), ForgottenGravestoneBlockEntityRenderer::new);
@@ -152,6 +150,9 @@ public class PetrichorUtilityMod {
             EntityRenderers.register(ModEntities.SHROOMIN.get(), ShroominRenderer::new);
             EntityRenderers.register(ModEntities.SPRITE.get(), SpriteRenderer::new);
             EntityRenderers.register(ModEntities.WILL_O_WISP.get(), WillOWispRenderer::new);
+            EntityRenderers.register(ModEntities.WANDERING_LANTERN.get(), WanderingLanternRenderer::new);
+            EntityRenderers.register(ModEntities.FALLEN_STAR.get(), FallenStarRenderer::new);
+
 
         }
     }
