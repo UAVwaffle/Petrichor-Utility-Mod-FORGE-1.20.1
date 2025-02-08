@@ -2,6 +2,7 @@ package com.uavwaffle.petrichorutilitymod.entity.client.model;
 
 import com.google.common.collect.Maps;
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
+import com.uavwaffle.petrichorutilitymod.entity.custom.DirewolfEntity;
 import com.uavwaffle.petrichorutilitymod.entity.custom.SpecterEntity;
 import com.uavwaffle.petrichorutilitymod.entity.custom.SpriteEntity;
 import com.uavwaffle.petrichorutilitymod.entity.custom.WillOWispEntity;
@@ -9,7 +10,12 @@ import com.uavwaffle.petrichorutilitymod.entity.varient_enum.SpriteVarient;
 import com.uavwaffle.petrichorutilitymod.entity.varient_enum.WillOWispVarient;
 import net.minecraft.Util;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import software.bernie.geckolib.constant.DataTickets;
+import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.model.data.EntityModelData;
 
 import java.util.Map;
 
@@ -47,5 +53,18 @@ public class SpriteModel extends GeoModel<SpriteEntity> {
     @Override
     public ResourceLocation getAnimationResource(SpriteEntity object) {
         return this.animations;
+    }
+
+    @Override
+    public void setCustomAnimations(SpriteEntity animatable, long instanceId, AnimationState<SpriteEntity> animationState) {
+
+        CoreGeoBone head = getAnimationProcessor().getBone("Head");
+
+        if (head != null) {
+            EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
+
+            head.setRotX(entityData.headPitch() * Mth.DEG_TO_RAD);
+            head.setRotY(entityData.netHeadYaw() * Mth.DEG_TO_RAD);
+        }
     }
 }
