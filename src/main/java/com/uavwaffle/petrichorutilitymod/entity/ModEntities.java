@@ -76,12 +76,12 @@ public class ModEntities {
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "shroomin").toString()));
     public static final RegistryObject<EntityType<SpriteEntity>> SPRITE =
             ENTITY_TYPES.register("sprite",
-                    () -> EntityType.Builder.of(SpriteEntity::new, MobCategory.MONSTER)
+                    () -> EntityType.Builder.of(SpriteEntity::new, MobCategory.AMBIENT)
                             .sized(0.5f, 0.8f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "sprite").toString()));
     public static final RegistryObject<EntityType<WillOWispEntity>> WILL_O_WISP =
             ENTITY_TYPES.register("will_o_wisp",
-                    () -> EntityType.Builder.of(WillOWispEntity::new, MobCategory.MONSTER)
+                    () -> EntityType.Builder.of(WillOWispEntity::new, MobCategory.AMBIENT)
                             .sized(0.5f, 1.6f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "will_o_wisp").toString()));
     public static final RegistryObject<EntityType<WanderingLanternEntity>> WANDERING_LANTERN =
@@ -91,7 +91,7 @@ public class ModEntities {
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "wandering_lantern").toString()));
     public static final RegistryObject<EntityType<FallenStarEntity>> FALLEN_STAR =
             ENTITY_TYPES.register("fallen_star",
-                    () -> EntityType.Builder.of(FallenStarEntity::new, MobCategory.MONSTER)
+                    () -> EntityType.Builder.of(FallenStarEntity::new, MobCategory.AMBIENT)
                             .sized(0.3f, 0.8f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "fallen_star").toString()));
 
