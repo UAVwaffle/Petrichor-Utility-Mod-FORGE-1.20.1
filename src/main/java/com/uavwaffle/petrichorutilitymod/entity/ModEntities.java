@@ -14,6 +14,8 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, PetrichorUtilityMod.MODID);
 
+    /* .ambient mobs spawn naturally while .creature mobs spawn at terrain gen like sheep and cows*/
+
     public static final RegistryObject<EntityType<BoulderSpiritEntity>> BOULDER_SPIRIT =
             ENTITY_TYPES.register("boulder_spirit",
                     () -> EntityType.Builder.of(BoulderSpiritEntity::new, MobCategory.MONSTER)
