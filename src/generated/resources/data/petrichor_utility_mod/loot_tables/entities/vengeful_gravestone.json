@@ -10,16 +10,6 @@
         }
       ],
       "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.5,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:paper"
-        }
-      ],
-      "rolls": 1.0
     }
   ],
   "random_sequence": "petrichor_utility_mod:entities/vengeful_gravestone"

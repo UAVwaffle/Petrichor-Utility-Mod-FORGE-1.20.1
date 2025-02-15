@@ -21,7 +21,7 @@ public class ModEntities {
                     () -> EntityType.Builder.of(BoulderSpiritEntity::new, MobCategory.MONSTER)
                             .sized(0.7f, 1.9f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "boulder_spirit").toString()));
-    public static final RegistryObject<EntityType<VengefulGravestoneEntity>> VENGEFULE_GRAVESTONE =
+    public static final RegistryObject<EntityType<VengefulGravestoneEntity>> VENGEFUL_GRAVESTONE =
             ENTITY_TYPES.register("vengeful_gravestone",
                     () -> EntityType.Builder.of(VengefulGravestoneEntity::new, MobCategory.MONSTER)
                             .sized(0.7f, 2.375f)

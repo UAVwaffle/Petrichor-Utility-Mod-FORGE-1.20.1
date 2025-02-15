@@ -1,6 +1,9 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -21,6 +24,8 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import javax.annotation.Nullable;
+
 public class WanderingLanternEntity extends PetrichorAttackingEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.wandering_lantern.idle");
@@ -34,9 +39,9 @@ public class WanderingLanternEntity extends PetrichorAttackingEntity {
     }
 
     public static AttributeSupplier.Builder createAttributes(){
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
-                .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f);
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20.0D)
+                .add(Attributes.ATTACK_DAMAGE, 10.0f)
+                .add(Attributes.MOVEMENT_SPEED, 0.35f);
     }
 
     protected void registerGoals() {
@@ -49,10 +54,7 @@ public class WanderingLanternEntity extends PetrichorAttackingEntity {
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0d, false));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, BoulderSpiritEntity.class, true));
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
 
 
@@ -74,5 +76,22 @@ public class WanderingLanternEntity extends PetrichorAttackingEntity {
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return 2.5f;
+    }
+
+    /* SOUNDS */
+//    @Nullable
+//    @Override
+//    protected SoundEvent getAmbientSound() {
+//        return SoundEvents.CHAIN_BREAK;
+//    }
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.CHAIN_BREAK;
+    }
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.CHAIN_BREAK;
     }
 }

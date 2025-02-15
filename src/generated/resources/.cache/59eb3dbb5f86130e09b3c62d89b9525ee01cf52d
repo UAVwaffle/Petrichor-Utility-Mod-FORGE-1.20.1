@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-07T19:20:02.744058	Loot Tables
+// 1.20.1	2025-02-14T17:51:05.2445887	Loot Tables
 f3388dd43f212d42c5de6e786b742d55c4b9b87e data/petrichor_utility_mod/loot_tables/blocks/alexandrite_block.json
 12a8994290ebaced30e000ededa8acbf7448db51 data/petrichor_utility_mod/loot_tables/blocks/forgotten_gravestone_block_entity.json
 835597e0ed6846a41c50bd124d7ebe2343c99000 data/petrichor_utility_mod/loot_tables/blocks/raw_alexandrite_block.json
@@ -14,7 +14,7 @@ a88eb8304ce3980b53e9eac7561e583c8e72f06b data/petrichor_utility_mod/loot_tables/
 439d6bdc047246ab93adcfabb7a9798bf271ab77 data/petrichor_utility_mod/loot_tables/entities/shade.json
 245e72c036b90a84f14f77eca29865815d42fd9f data/petrichor_utility_mod/loot_tables/entities/shroomin.json
 f8b1da96c537b248cc02b382e7ae116659f544e2 data/petrichor_utility_mod/loot_tables/entities/specter.json
-95131e00492c8b4369f45019d1d6b8bd589b2d02 data/petrichor_utility_mod/loot_tables/entities/sprite.json
-1ccac248e8a69d0a2660e53e0b93d4018fc60cd8 data/petrichor_utility_mod/loot_tables/entities/vengeful_gravestone.json
+b4fa2db591316b12c9c48a846ad25a03970d38ac data/petrichor_utility_mod/loot_tables/entities/sprite.json
+ff38fba5c657168fa9341c144fa9b83442042893 data/petrichor_utility_mod/loot_tables/entities/vengeful_gravestone.json
 fc188c507502244568df432f6efcc8f1a242db92 data/petrichor_utility_mod/loot_tables/entities/wandering_lantern.json
 e1ba3d8b6d0a7209e6065826b1214e374eb98522 data/petrichor_utility_mod/loot_tables/entities/will_o_wisp.json

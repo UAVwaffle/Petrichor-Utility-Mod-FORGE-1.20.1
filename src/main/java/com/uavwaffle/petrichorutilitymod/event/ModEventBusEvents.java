@@ -4,9 +4,8 @@ import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
 import com.uavwaffle.petrichorutilitymod.entity.custom.*;
 import com.uavwaffle.petrichorutilitymod.util.Util;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
@@ -19,7 +18,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.BOULDER_SPIRIT.get(), BoulderSpiritEntity.createAttributes().build());
-        event.put(ModEntities.VENGEFULE_GRAVESTONE.get(), VengefulGravestoneEntity.createAttributes().build());
+        event.put(ModEntities.VENGEFUL_GRAVESTONE.get(), VengefulGravestoneEntity.createAttributes().build());
         event.put(ModEntities.DIREWOLF.get(), DirewolfEntity.createAttributes().build());
         event.put(ModEntities.HAUNT.get(), HauntEntity.createAttributes().build());
         event.put(ModEntities.MEADOW_SLIME.get(), MeadowSlimeEntity.createAttributes().build());
@@ -39,7 +38,12 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void registerSpawnPlacement(SpawnPlacementRegisterEvent event) {
+        /* Vanilla spawn placements: package net.minecraft.world.entity; public class SpawnPlacements */
         event.register(ModEntities.SPRITE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Util.PetrichorSpawnRules::checkAnimalSpawnRulesIgnoreLight, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.WANDERING_LANTERN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.VENGEFUL_GRAVESTONE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 }

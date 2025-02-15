@@ -6,7 +6,10 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -44,7 +47,7 @@ public class SpriteEntity extends PathfinderMob implements GeoEntity {
     }
 
     public static AttributeSupplier.Builder createAttributes(){
-        return AmbientCreature.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D)
+        return AmbientCreature.createMobAttributes().add(Attributes.MAX_HEALTH, 8.0D)
                 .add(Attributes.ATTACK_DAMAGE, 1.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.20f);
     }
@@ -146,6 +149,24 @@ public class SpriteEntity extends PathfinderMob implements GeoEntity {
         SpriteVarient variant = Util.getRandom(SpriteVarient.values(), this.random);
         this.setVariant(variant);
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    }
+
+
+    /* SOUNDS */
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.AZALEA_LEAVES_PLACE;
+    }
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.AZALEA_LEAVES_BREAK;
+    }
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.AZALEA_LEAVES_BREAK;
     }
 
 }

@@ -8,7 +8,6 @@ import com.uavwaffle.petrichorutilitymod.entity.client.renderer.*;
 import com.uavwaffle.petrichorutilitymod.item.CreativeTabs;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
 import com.uavwaffle.petrichorutilitymod.item.ModItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
@@ -101,15 +100,15 @@ public class PetrichorUtilityMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
-
-        if (Config.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+//        LOGGER.info("HELLO FROM COMMON SETUP");
+//        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+//
+//        if (Config.logDirtBlock)
+//            LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+//
+//        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
+//
+//        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
 //    // Add the example block item to the building blocks tab
@@ -122,7 +121,7 @@ public class PetrichorUtilityMod {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+//        LOGGER.info("HELLO from server starting");
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -137,7 +136,7 @@ public class PetrichorUtilityMod {
             BlockEntityRenderers.register(ModBlockEntities.FORGOTTEN_GRAVESTONE_BLOCK_ENTITY.get(), ForgottenGravestoneBlockEntityRenderer::new);
 
             EntityRenderers.register(ModEntities.BOULDER_SPIRIT.get(), BoulderSpiritRenderer::new);
-            EntityRenderers.register(ModEntities.VENGEFULE_GRAVESTONE.get(), VengefulGravestoneRenderer::new);
+            EntityRenderers.register(ModEntities.VENGEFUL_GRAVESTONE.get(), VengefulGravestoneRenderer::new);
             EntityRenderers.register(ModEntities.DIREWOLF.get(), DirewolfRenderer::new);
             EntityRenderers.register(ModEntities.HAUNT.get(), HauntRenderer::new);
             EntityRenderers.register(ModEntities.MEADOW_SLIME.get(), MeadowSlimeRenderer::new);

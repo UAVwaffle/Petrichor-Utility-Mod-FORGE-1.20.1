@@ -38,7 +38,7 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.BOULDER_SPIRIT, 0x615f5e, 0x1448ab,
                     new Item.Properties()));
     public static final RegistryObject<Item> VENGEFUL_GRAVESTONE_SPAWN_EGG = ITEMS.register("vengeful_gravestone_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.VENGEFULE_GRAVESTONE, 0x615f5e, 0x703a34,
+            () -> new ForgeSpawnEggItem(ModEntities.VENGEFUL_GRAVESTONE, 0x615f5e, 0x703a34,
                     new Item.Properties()));
     public static final RegistryObject<Item> DIREWOLF_SPAWN_EGG = ITEMS.register("direwolf_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DIREWOLF, 0x2b2826, 0x701518,
