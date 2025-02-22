@@ -48,8 +48,8 @@ public class HauntEntity extends PetrichorAttackingEntity implements NeutralMob 
 
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 10.0D)
-                .add(Attributes.ATTACK_DAMAGE, 15.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f);
+                .add(Attributes.ATTACK_DAMAGE, 4.0f)
+                .add(Attributes.MOVEMENT_SPEED, 0.24f);
     }
 
     protected void registerGoals() {
@@ -61,7 +61,7 @@ public class HauntEntity extends PetrichorAttackingEntity implements NeutralMob 
     }
     protected void addBehaviourGoals() {
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers());
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0d, false));
+        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.25d, false));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
     }
 

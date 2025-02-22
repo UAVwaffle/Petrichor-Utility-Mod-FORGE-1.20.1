@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "petrichor_utility_mod:alexandrite_block"
+          "name": "minecraft:oak_log"
         }
       ],
       "rolls": 1.0

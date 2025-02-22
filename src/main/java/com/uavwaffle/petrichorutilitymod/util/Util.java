@@ -9,6 +9,9 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.dimension.DimensionType;
 
 public class Util {
 
@@ -23,6 +26,25 @@ public class Util {
 
         public static boolean checkAnimalSpawnRulesIgnoreLight(EntityType<? extends Mob> mob, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
             return pLevel.getBlockState(pPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON);
+        }
+
+        public static boolean checkAnimalSpawnRulesInDarkness(EntityType<? extends Mob> mob, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+            return pLevel.getBlockState(pPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && isDarkEnoughToSpawn(pLevel, pPos, pRandom);
+        }
+
+        public static boolean isDarkEnoughToSpawn(ServerLevelAccessor pLevel, BlockPos pPos, RandomSource pRandom) {
+            if (pLevel.getBrightness(LightLayer.SKY, pPos) > pRandom.nextInt(32)) {
+                return false;
+            } else {
+                DimensionType dimensiontype = pLevel.dimensionType();
+                int i = dimensiontype.monsterSpawnBlockLightLimit();
+                if (i < 15 && pLevel.getBrightness(LightLayer.BLOCK, pPos) > i) {
+                    return false;
+                } else {
+                    int j = pLevel.getLevel().isThundering() ? pLevel.getMaxLocalRawBrightness(pPos, 10) : pLevel.getMaxLocalRawBrightness(pPos);
+                    return j <= dimensiontype.monsterSpawnLightTest().sample(pRandom);
+                }
+            }
         }
     }
 }

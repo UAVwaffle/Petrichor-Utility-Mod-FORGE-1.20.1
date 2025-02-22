@@ -7,6 +7,7 @@ import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -40,7 +41,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.HAUNT.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+                        .add(LootItem.lootTableItem(Items.COAL))));
 
         add(ModEntities.MEADOW_SLIME.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
@@ -55,7 +56,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.SHADE.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+                        .add(LootItem.lootTableItem(Blocks.OAK_LOG))));
 
         add(ModEntities.DEATH_KNELL.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
@@ -90,7 +91,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.WILL_O_WISP.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST))));
 
         add(ModEntities.WANDERING_LANTERN.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()

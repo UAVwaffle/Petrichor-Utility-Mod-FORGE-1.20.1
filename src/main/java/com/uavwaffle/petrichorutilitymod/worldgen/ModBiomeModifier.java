@@ -20,7 +20,11 @@ import java.util.List;
 public class ModBiomeModifier {
 
     public static final ResourceKey<BiomeModifier> SPAWN_SPRITE = registerKey("spawn_sprite");
+    public static final ResourceKey<BiomeModifier> SPAWN_WILL_O_WISP = registerKey("spawn_will_o_wisp");
+
     public static final ResourceKey<BiomeModifier> SPAWN_VENGEFUL_GRAVESTONE = registerKey("spawn_vengeful_gravestone");
+    public static final ResourceKey<BiomeModifier> SPAWN_HAUNT = registerKey("spawn_haunt");
+    public static final ResourceKey<BiomeModifier> SPAWN_SHADE = registerKey("spawn_shade");
     public static final ResourceKey<BiomeModifier> SPAWN_WANDERING_LANTERN = registerKey("spawn_wandering_lantern");
 
 
@@ -38,9 +42,24 @@ public class ModBiomeModifier {
                 biomes.getOrThrow(BiomeTags.IS_FOREST),
 //                biomes.getOrThrow(Tags.Biomes.IS_DENSE_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.SPRITE.get(), 30, 3, 5))));
+
+        context.register(SPAWN_WILL_O_WISP, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_FOREST),
+//                biomes.getOrThrow(Tags.Biomes.IS_DENSE_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.WILL_O_WISP.get(), 30, 1, 1))));
+
         context.register(SPAWN_VENGEFUL_GRAVESTONE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.VENGEFUL_GRAVESTONE.get(), 40, 1,1))));
+
+        context.register(SPAWN_HAUNT, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.HAUNT.get(), 50, 1,4))));
+
+        context.register(SPAWN_SHADE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHADE.get(), 40, 1,1))));
+
         context.register(SPAWN_WANDERING_LANTERN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.WANDERING_LANTERN.get(), 20, 1,1))));

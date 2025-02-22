@@ -41,7 +41,13 @@ public class ModEventBusEvents {
         /* Vanilla spawn placements: package net.minecraft.world.entity; public class SpawnPlacements */
         event.register(ModEntities.SPRITE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Util.PetrichorSpawnRules::checkAnimalSpawnRulesIgnoreLight, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.WILL_O_WISP.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Util.PetrichorSpawnRules::checkAnimalSpawnRulesInDarkness, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.WANDERING_LANTERN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.HAUNT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.SHADE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.VENGEFUL_GRAVESTONE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
