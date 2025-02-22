@@ -37,13 +37,13 @@ public class ModBiomeModifier {
         context.register(SPAWN_SPRITE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_FOREST),
 //                biomes.getOrThrow(Tags.Biomes.IS_DENSE_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SPRITE.get(), 13, 3, 5))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SPRITE.get(), 30, 3, 5))));
         context.register(SPAWN_VENGEFUL_GRAVESTONE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.VENGEFUL_GRAVESTONE.get(), 40, 1,1))));
         context.register(SPAWN_WANDERING_LANTERN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.WANDERING_LANTERN.get(), 15, 1,1))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.WANDERING_LANTERN.get(), 20, 1,1))));
 
     }
 }
