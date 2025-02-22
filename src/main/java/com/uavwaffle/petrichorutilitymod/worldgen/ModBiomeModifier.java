@@ -26,6 +26,8 @@ public class ModBiomeModifier {
     public static final ResourceKey<BiomeModifier> SPAWN_HAUNT = registerKey("spawn_haunt");
     public static final ResourceKey<BiomeModifier> SPAWN_SHADE = registerKey("spawn_shade");
     public static final ResourceKey<BiomeModifier> SPAWN_SHROOMIN = registerKey("spawn_shroomin");
+    public static final ResourceKey<BiomeModifier> SPAWN_SPECTER = registerKey("spawn_specter");
+    public static final ResourceKey<BiomeModifier> SPAWN_DIREWOLF = registerKey("spawn_direwolf");
     public static final ResourceKey<BiomeModifier> SPAWN_WANDERING_LANTERN = registerKey("spawn_wandering_lantern");
 
 
@@ -42,7 +44,7 @@ public class ModBiomeModifier {
         context.register(SPAWN_SPRITE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_FOREST),
 //                biomes.getOrThrow(Tags.Biomes.IS_DENSE_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SPRITE.get(), 30, 3, 5))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SPRITE.get(), 15, 3, 5))));
 
         context.register(SPAWN_WILL_O_WISP, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_FOREST),
@@ -51,19 +53,27 @@ public class ModBiomeModifier {
 
         context.register(SPAWN_VENGEFUL_GRAVESTONE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.VENGEFUL_GRAVESTONE.get(), 40, 1,1))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.VENGEFUL_GRAVESTONE.get(), 65, 1,1))));
 
         context.register(SPAWN_HAUNT, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.HAUNT.get(), 50, 1,4))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.HAUNT.get(), 60, 1,4))));
 
         context.register(SPAWN_SHADE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHADE.get(), 40, 1,1))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHADE.get(), 60, 1,1))));
 
         context.register(SPAWN_SHROOMIN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHROOMIN.get(), 80, 1,4))));
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHROOMIN.get(), 90, 1,5))));
+
+        context.register(SPAWN_SPECTER, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SPECTER.get(), 40, 1,1))));
+
+        context.register(SPAWN_DIREWOLF, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.DIREWOLF.get(), 30, 4,8))));
 
         context.register(SPAWN_WANDERING_LANTERN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),

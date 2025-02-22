@@ -5,6 +5,6 @@
     "type": "petrichor_utility_mod:haunt",
     "maxCount": 4,
     "minCount": 1,
-    "weight": 50
+    "weight": 60
   }
 }

@@ -1,6 +1,9 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -71,5 +74,22 @@ public class ShadeEntity extends PetrichorAttackingEntity {
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return 2.0f;
+    }
+
+    /* SOUNDS */
+//    @javax.annotation.Nullable
+//    @Override
+//    protected SoundEvent getAmbientSound() {
+//        return SoundEvents.AZALEA_LEAVES_PLACE;
+//    }
+    @javax.annotation.Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.WOOD_HIT;
+    }
+    @javax.annotation.Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.WOOD_BREAK;
     }
 }

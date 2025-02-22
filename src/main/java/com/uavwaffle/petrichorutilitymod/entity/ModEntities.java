@@ -29,7 +29,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DirewolfEntity>> DIREWOLF =
             ENTITY_TYPES.register("direwolf",
                     () -> EntityType.Builder.of(DirewolfEntity::new, MobCategory.MONSTER)
-                            .sized(0.95f, 1.5f)
+                            .sized(0.90f, 1.5f)
                             .build(new ResourceLocation(PetrichorUtilityMod.MODID, "direwolf").toString()));
     public static final RegistryObject<EntityType<HauntEntity>> HAUNT =
             ENTITY_TYPES.register("haunt",

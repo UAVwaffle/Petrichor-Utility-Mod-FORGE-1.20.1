@@ -36,12 +36,12 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.DIREWOLF.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+                        .add(LootItem.lootTableItem(Items.BONE))));
 
         add(ModEntities.HAUNT.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(Items.COAL))));
+                        .add(LootItem.lootTableItem(Items.CHARCOAL))));
 
         add(ModEntities.MEADOW_SLIME.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
@@ -65,8 +65,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
         add(ModEntities.SPECTER.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+                        .setRolls(ConstantValue.exactly(2.0F))
+                        .add(LootItem.lootTableItem(Items.SLIME_BALL))));
 
         add(ModEntities.CURSED_DOLL.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()

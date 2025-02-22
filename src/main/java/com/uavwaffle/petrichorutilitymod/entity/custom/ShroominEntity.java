@@ -7,7 +7,10 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -47,14 +50,15 @@ public class ShroominEntity extends PetrichorAttackingEntity {
 
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 14.0D)
-                .add(Attributes.ATTACK_DAMAGE, 4.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f);
+                .add(Attributes.ATTACK_DAMAGE, 5.0f)
+                .add(Attributes.MOVEMENT_SPEED, 0.3f)
+                .add(Attributes.FOLLOW_RANGE, 30.0D);
     }
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 30.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.addBehaviourGoals();
     }
@@ -122,6 +126,23 @@ public class ShroominEntity extends PetrichorAttackingEntity {
         ShroominVarient variant = Util.getRandom(ShroominVarient.values(), this.random);
         this.setVariant(variant);
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    }
+
+    /* SOUNDS */
+//    @Nullable
+//    @Override
+//    protected SoundEvent getAmbientSound() {
+//        return SoundEvents.AZALEA_LEAVES_PLACE;
+//    }
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.NYLIUM_BREAK;
+    }
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.NYLIUM_BREAK;
     }
 
 }

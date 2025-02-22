@@ -6,10 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "petrichor_utility_mod:alexandrite_block"
+          "name": "minecraft:slime_ball"
         }
       ],
-      "rolls": 1.0
+      "rolls": 2.0
     }
   ],
   "random_sequence": "petrichor_utility_mod:entities/specter"

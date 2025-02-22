@@ -2,8 +2,11 @@ package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -133,5 +136,22 @@ public class HauntEntity extends PetrichorAttackingEntity implements NeutralMob 
     public void startPersistentAngerTimer() {
         this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
 
+    }
+
+    /* SOUNDS */
+//    @javax.annotation.Nullable
+//    @Override
+//    protected SoundEvent getAmbientSound() {
+//        return SoundEvents.AZALEA_LEAVES_PLACE;
+//    }
+    @javax.annotation.Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.WOOD_HIT;
+    }
+    @javax.annotation.Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.WOOD_BREAK;
     }
 }
