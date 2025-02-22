@@ -46,8 +46,8 @@ public class ShroominEntity extends PetrichorAttackingEntity {
     }
 
     public static AttributeSupplier.Builder createAttributes(){
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
-                .add(Attributes.ATTACK_DAMAGE, 15.0f)
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 14.0D)
+                .add(Attributes.ATTACK_DAMAGE, 4.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.25f);
     }
 
@@ -61,10 +61,6 @@ public class ShroominEntity extends PetrichorAttackingEntity {
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0d, false));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, BoulderSpiritEntity.class, true));
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
     }
 
 

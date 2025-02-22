@@ -1,6 +1,7 @@
-// 1.20.1	2025-02-22T11:48:20.0621844	Registries
+// 1.20.1	2025-02-22T12:02:25.3812328	Registries
 c449314057d12daa40635a1fcba33e1dd7ade7bd data/petrichor_utility_mod/forge/biome_modifier/spawn_haunt.json
 bdaca4c5a105d711d4f8235f8124827896b657a9 data/petrichor_utility_mod/forge/biome_modifier/spawn_shade.json
+14791d317cf9909789850c8257d44eec2aa3a002 data/petrichor_utility_mod/forge/biome_modifier/spawn_shroomin.json
 4308f9da803dfd73d8ff4fc85d4a96e8f98e5a84 data/petrichor_utility_mod/forge/biome_modifier/spawn_sprite.json
 04ce880e45601a3e640bf94446a845de1f7b87a3 data/petrichor_utility_mod/forge/biome_modifier/spawn_vengeful_gravestone.json
 b43bb44396789db1da7d539bfb0812577b678221 data/petrichor_utility_mod/forge/biome_modifier/spawn_wandering_lantern.json

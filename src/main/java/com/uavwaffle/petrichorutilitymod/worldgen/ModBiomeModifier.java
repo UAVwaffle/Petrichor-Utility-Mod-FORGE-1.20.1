@@ -25,6 +25,7 @@ public class ModBiomeModifier {
     public static final ResourceKey<BiomeModifier> SPAWN_VENGEFUL_GRAVESTONE = registerKey("spawn_vengeful_gravestone");
     public static final ResourceKey<BiomeModifier> SPAWN_HAUNT = registerKey("spawn_haunt");
     public static final ResourceKey<BiomeModifier> SPAWN_SHADE = registerKey("spawn_shade");
+    public static final ResourceKey<BiomeModifier> SPAWN_SHROOMIN = registerKey("spawn_shroomin");
     public static final ResourceKey<BiomeModifier> SPAWN_WANDERING_LANTERN = registerKey("spawn_wandering_lantern");
 
 
@@ -59,6 +60,10 @@ public class ModBiomeModifier {
         context.register(SPAWN_SHADE, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHADE.get(), 40, 1,1))));
+
+        context.register(SPAWN_SHROOMIN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.SHROOMIN.get(), 80, 1,4))));
 
         context.register(SPAWN_WANDERING_LANTERN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),

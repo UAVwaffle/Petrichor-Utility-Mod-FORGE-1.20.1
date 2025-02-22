@@ -35,7 +35,7 @@ public class ShadeEntity extends PetrichorAttackingEntity {
     }
 
     public static AttributeSupplier.Builder createAttributes(){
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 40.0D)
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.ATTACK_DAMAGE, 8.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.26f);
     }

@@ -81,7 +81,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.SHROOMIN.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+                        .add(LootItem.lootTableItem(Items.RED_MUSHROOM))));
 
         add(ModEntities.SPRITE.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
