@@ -2,8 +2,12 @@ package com.uavwaffle.petrichorutilitymod.entity.custom.type;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -68,5 +72,21 @@ public abstract class PetrichorAttackingEntity extends Monster implements GeoEnt
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "AttackController", state -> PlayState.STOP).triggerableAnim("Attack", ATTACK_ANIMATION));
+    }
+
+    @Override
+    public boolean checkSpawnRules(@NotNull LevelAccessor pLevel, @NotNull MobSpawnType pSpawnReason) {
+        if(pSpawnReason != MobSpawnType.NATURAL){
+            return super.checkSpawnRules(pLevel, pSpawnReason);
+        }
+
+        if(pLevel.getBiome(this.getOnPos()).containsTag(Tags.Biomes.IS_MUSHROOM)) {
+            return false;
+        }
+
+        if(pLevel.getBiome(this.getOnPos()).is(Biomes.DEEP_DARK)) {
+            return false;
+        }
+        return  true;
     }
 }
