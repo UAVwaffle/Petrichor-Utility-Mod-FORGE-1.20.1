@@ -1,5 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -62,5 +63,10 @@ public class FallenStarEntity extends PathfinderMob implements GeoEntity {
     @Override
     protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 0.7f;
+    }
+
+    @Override
+    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
+        return false;
     }
 }

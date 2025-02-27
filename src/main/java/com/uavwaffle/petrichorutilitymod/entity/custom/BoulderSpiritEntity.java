@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -20,7 +20,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class BoulderSpiritEntity extends PetrichorAttackingEntity {
+public class BoulderSpiritEntity extends PetrichorNoFallEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.boulder_spirit.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.boulder_spirit.walk");

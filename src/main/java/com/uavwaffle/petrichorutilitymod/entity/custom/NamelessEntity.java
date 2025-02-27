@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -22,7 +22,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class NamelessEntity extends PetrichorAttackingEntity {
+public class NamelessEntity extends PetrichorNoFallEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.nameless.idle");
     public static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenLoop("animation.nameless.attack");

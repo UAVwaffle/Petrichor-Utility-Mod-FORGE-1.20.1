@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
 import com.uavwaffle.petrichorutilitymod.util.Constants;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -29,7 +29,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class HauntEntity extends PetrichorAttackingEntity implements NeutralMob {
+public class HauntEntity extends PetrichorNoFallEntity implements NeutralMob {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.haunt.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.haunt.walk");

@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -22,7 +22,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class VengefulGravestoneEntity extends PetrichorAttackingEntity {
+public class VengefulGravestoneEntity extends PetrichorNoFallEntity {
 
 //    private boolean resting = true;
 
@@ -64,9 +64,7 @@ public class VengefulGravestoneEntity extends PetrichorAttackingEntity {
         return pAir;
     }
 
-
-
-        @Override
+    @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
 
