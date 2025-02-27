@@ -14,6 +14,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -72,7 +73,7 @@ public class CursedDollEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
+    protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 1.6f;
     }
 }

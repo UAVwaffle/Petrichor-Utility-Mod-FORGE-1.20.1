@@ -1,7 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -14,7 +13,6 @@ import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -77,7 +75,7 @@ public class BoulderSpiritEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
+    protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 1.8f;
     }
 

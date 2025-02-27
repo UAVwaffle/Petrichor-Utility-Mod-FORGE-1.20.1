@@ -2,11 +2,13 @@ package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
 import com.uavwaffle.petrichorutilitymod.entity.varient_enum.ShroominVarient;
+import com.uavwaffle.petrichorutilitymod.util.id.ModLootTables;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
@@ -16,14 +18,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import software.bernie.geckolib.animatable.GeoEntity;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -84,7 +83,7 @@ public class ShroominEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
+    protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 1.0f;
     }
 
@@ -110,39 +109,46 @@ public class ShroominEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag pCompound) {
+    public void addAdditionalSaveData(@NotNull CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putInt("Variant", this.getTypeVariant());
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag pCompound) {
+    public void readAdditionalSaveData(@NotNull CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.entityData.set(VARIANT, pCompound.getInt("Variant"));
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor pLevel, @NotNull DifficultyInstance pDifficulty, @NotNull MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         ShroominVarient variant = Util.getRandom(ShroominVarient.values(), this.random);
         this.setVariant(variant);
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
     }
 
-    /* SOUNDS */
+    @Override
+    public @NotNull ResourceLocation getDefaultLootTable() {
+        return switch (this.getTypeVariant()) {
+            case 0 -> ModLootTables.SHROOMIN_RED;
+            case 1 -> ModLootTables.SHROOMIN_BROWN;
+            default -> throw new IncompatibleClassChangeError();
+        };
+    }
+
+
+        /* SOUNDS */
 //    @Nullable
 //    @Override
 //    protected SoundEvent getAmbientSound() {
 //        return SoundEvents.AZALEA_LEAVES_PLACE;
 //    }
-    @Nullable
     @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+    protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.NYLIUM_BREAK;
     }
-    @Nullable
     @Override
-    protected SoundEvent getDeathSound() {
+    protected @NotNull SoundEvent getDeathSound() {
         return SoundEvents.NYLIUM_BREAK;
     }
-
 }

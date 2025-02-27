@@ -1,8 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -76,7 +74,7 @@ public class NamelessEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
+    protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 1.6f;
     }
 

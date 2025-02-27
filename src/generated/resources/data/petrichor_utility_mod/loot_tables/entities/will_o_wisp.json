@@ -6,10 +6,24 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
           "name": "minecraft:glowstone_dust"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 0.0
+      }
     }
   ],
   "random_sequence": "petrichor_utility_mod:entities/will_o_wisp"

@@ -2,12 +2,8 @@ package com.uavwaffle.petrichorutilitymod.entity.client.model;
 
 import com.google.common.collect.Maps;
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
-import com.uavwaffle.petrichorutilitymod.entity.custom.DirewolfEntity;
-import com.uavwaffle.petrichorutilitymod.entity.custom.SpecterEntity;
 import com.uavwaffle.petrichorutilitymod.entity.custom.SpriteEntity;
-import com.uavwaffle.petrichorutilitymod.entity.custom.WillOWispEntity;
 import com.uavwaffle.petrichorutilitymod.entity.varient_enum.SpriteVarient;
-import com.uavwaffle.petrichorutilitymod.entity.varient_enum.WillOWispVarient;
 import net.minecraft.Util;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;

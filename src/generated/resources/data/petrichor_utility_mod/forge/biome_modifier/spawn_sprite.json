@@ -5,6 +5,6 @@
     "type": "petrichor_utility_mod:sprite",
     "maxCount": 5,
     "minCount": 3,
-    "weight": 15
+    "weight": 10
   }
 }

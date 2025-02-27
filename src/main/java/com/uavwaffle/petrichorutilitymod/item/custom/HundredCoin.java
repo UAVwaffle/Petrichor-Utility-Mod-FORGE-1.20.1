@@ -10,13 +10,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class HundredCoin extends Item {
     public HundredCoin(Properties pProperties) {
         super(pProperties);
     }
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         pLevel.playSound(pPlayer, pPlayer.getOnPos(), SoundEvents.CHAIN_BREAK, SoundSource.PLAYERS,1.0f, 1.0f);
         if(!pLevel.isClientSide()) {
             return CoinStar.coinstar(pLevel, pPlayer, pUsedHand, ModItems.TEN_COIN.get(), ModItems.FROG_INGOT.get(), false, false);

@@ -1,9 +1,7 @@
 package com.uavwaffle.petrichorutilitymod.entity.client.model;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
-import com.uavwaffle.petrichorutilitymod.entity.custom.DirewolfEntity;
 import com.uavwaffle.petrichorutilitymod.entity.custom.FallenStarEntity;
-import com.uavwaffle.petrichorutilitymod.entity.custom.WanderingLanternEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import software.bernie.geckolib.constant.DataTickets;

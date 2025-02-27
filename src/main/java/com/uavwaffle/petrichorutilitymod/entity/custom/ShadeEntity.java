@@ -1,6 +1,7 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
+import com.uavwaffle.petrichorutilitymod.util.Constants;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -11,13 +12,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -72,7 +71,7 @@ public class ShadeEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
+    protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 2.0f;
     }
 
@@ -82,14 +81,20 @@ public class ShadeEntity extends PetrichorAttackingEntity {
 //    protected SoundEvent getAmbientSound() {
 //        return SoundEvents.AZALEA_LEAVES_PLACE;
 //    }
-    @javax.annotation.Nullable
     @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+    protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.WOOD_HIT;
     }
-    @javax.annotation.Nullable
     @Override
-    protected SoundEvent getDeathSound() {
+    protected @NotNull SoundEvent getDeathSound() {
         return SoundEvents.WOOD_BREAK;
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(@NotNull DamageSource source, int looting, boolean recentlyHit) {
+        ItemStack itemStack = new ItemStack(Constants.getRandomWoodType());
+        itemStack.setCount(Math.min(looting + 1, 3) * 2);
+        this.spawnAtLocation(itemStack);
+        super.dropCustomDeathLoot(source, looting, recentlyHit);
     }
 }

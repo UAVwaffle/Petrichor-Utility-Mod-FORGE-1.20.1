@@ -1,9 +1,7 @@
 package com.uavwaffle.petrichorutilitymod.entity.client.renderer;
 
 import com.uavwaffle.petrichorutilitymod.entity.client.model.ShroominModel;
-import com.uavwaffle.petrichorutilitymod.entity.client.model.SpecterModel;
 import com.uavwaffle.petrichorutilitymod.entity.custom.ShroominEntity;
-import com.uavwaffle.petrichorutilitymod.entity.custom.SpecterEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 

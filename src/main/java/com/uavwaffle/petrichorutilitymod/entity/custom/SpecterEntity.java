@@ -11,13 +11,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -76,7 +73,7 @@ public class SpecterEntity extends PetrichorAttackingEntity {
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
+    protected float getStandingEyeHeight(@NotNull Pose pPose, @NotNull EntityDimensions pSize) {
         return 1.6f;
     }
 
@@ -86,14 +83,12 @@ public class SpecterEntity extends PetrichorAttackingEntity {
     protected SoundEvent getAmbientSound() {
         return SoundEvents.VEX_AMBIENT;
     }
-    @Nullable
     @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+    protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.VEX_HURT;
     }
-    @Nullable
     @Override
-    protected SoundEvent getDeathSound() {
+    protected @NotNull SoundEvent getDeathSound() {
         return SoundEvents.VEX_DEATH;
     }
 }

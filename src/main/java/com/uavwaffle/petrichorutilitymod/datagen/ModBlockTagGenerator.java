@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +19,7 @@ public class ModBlockTagGenerator  extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider) {
+    protected void addTags(HolderLookup.@NotNull Provider pProvider) {
 //        this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
 //                .add(ModBlocks.ALEXANDRITE_ORE.get()).addTag(Tags.Blocks.ORES);
 
@@ -38,7 +39,7 @@ public class ModBlockTagGenerator  extends BlockTagsProvider {
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Block Tags";
     }
 }

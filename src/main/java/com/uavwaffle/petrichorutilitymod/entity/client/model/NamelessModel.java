@@ -2,7 +2,6 @@ package com.uavwaffle.petrichorutilitymod.entity.client.model;
 
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.entity.custom.NamelessEntity;
-import com.uavwaffle.petrichorutilitymod.entity.custom.SpecterEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 

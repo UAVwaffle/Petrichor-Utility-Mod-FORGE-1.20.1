@@ -3,9 +3,7 @@ package com.uavwaffle.petrichorutilitymod.entity.client.model;
 import com.uavwaffle.petrichorutilitymod.PetrichorUtilityMod;
 import com.uavwaffle.petrichorutilitymod.entity.custom.BoulderSpiritEntity;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.model.GeoModel;
-import software.bernie.geckolib.renderer.GeoRenderer;
 
 public class BoulderSpiritModel extends GeoModel<BoulderSpiritEntity> {
     private final ResourceLocation model = new ResourceLocation(PetrichorUtilityMod.MODID, "geo/boulder_spirit.geo.json");

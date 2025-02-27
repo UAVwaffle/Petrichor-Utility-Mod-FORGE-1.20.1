@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -54,10 +53,10 @@ public class CreativeTabs {
 
 
     // Add the example block item to the building blocks tab
-    public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) // for adding things to vanilla creative tabs
-//            event.accept(ModItems.COIN);
-    }
+//    public static void addCreative(BuildCreativeModeTabContentsEvent event) {
+////        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) // for adding things to vanilla creative tabs
+////            event.accept(ModItems.COIN);
+//    }
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
