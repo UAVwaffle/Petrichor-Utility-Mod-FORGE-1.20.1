@@ -1,12 +1,19 @@
 package com.uavwaffle.petrichorutilitymod.util;
 
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.registries.ForgeRegistries;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class Constants {
+
+    public static final TagKey<Biome> FORGE_NO_DEFAULT_MONSTERS_TAG = ForgeRegistries.BIOMES.tags().createTagKey(new ResourceLocation("forge", "no_default_monsters"));
 
     public static final List<ItemLike> WOOD_TYPES = Arrays.asList(
             Items.OAK_LOG,

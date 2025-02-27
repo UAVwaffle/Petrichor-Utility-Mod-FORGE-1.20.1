@@ -1,5 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom.type;
 
+import com.uavwaffle.petrichorutilitymod.util.Constants;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -80,6 +81,10 @@ public abstract class PetrichorAttackingEntity extends Monster implements GeoEnt
             return super.checkSpawnRules(pLevel, pSpawnReason);
         }
 
+        if(pLevel.getBiome(this.getOnPos()).containsTag(Constants.FORGE_NO_DEFAULT_MONSTERS_TAG)) {
+            return false;
+        }
+
         if(pLevel.getBiome(this.getOnPos()).containsTag(Tags.Biomes.IS_MUSHROOM)) {
             return false;
         }
@@ -87,6 +92,8 @@ public abstract class PetrichorAttackingEntity extends Monster implements GeoEnt
         if(pLevel.getBiome(this.getOnPos()).is(Biomes.DEEP_DARK)) {
             return false;
         }
+
         return  true;
     }
+
 }
