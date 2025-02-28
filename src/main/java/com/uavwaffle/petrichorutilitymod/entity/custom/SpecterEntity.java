@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorSlowFallEntity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,7 +24,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 
-public class SpecterEntity extends PetrichorNoFallEntity {
+public class SpecterEntity extends PetrichorSlowFallEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.specter.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.specter.walk");

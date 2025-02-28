@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorSlowFallEntity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -22,7 +22,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class DeathKnellEntity extends PetrichorNoFallEntity {
+public class DeathKnellEntity extends PetrichorSlowFallEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.death_knell.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.death_knell.walk");

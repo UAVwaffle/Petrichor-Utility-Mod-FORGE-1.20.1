@@ -1,6 +1,6 @@
 package com.uavwaffle.petrichorutilitymod.entity.custom;
 
-import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorNoFallEntity;
+import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorSlowFallEntity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -22,7 +22,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class WanderingLanternEntity extends PetrichorNoFallEntity {
+public class WanderingLanternEntity extends PetrichorSlowFallEntity {
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.wandering_lantern.idle");
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.wandering_lantern.walk");
