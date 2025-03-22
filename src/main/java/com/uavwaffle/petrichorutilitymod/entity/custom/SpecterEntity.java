@@ -81,7 +81,7 @@ public class SpecterEntity extends PetrichorSlowFallEntity {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.VEX_AMBIENT;
+        return SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD.value();
     }
     @Override
     protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
@@ -89,6 +89,6 @@ public class SpecterEntity extends PetrichorSlowFallEntity {
     }
     @Override
     protected @NotNull SoundEvent getDeathSound() {
-        return SoundEvents.VEX_DEATH;
+        return SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD.value();
     }
 }

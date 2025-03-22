@@ -14,7 +14,11 @@
           "name": "petrichor_utility_mod:coin"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
     }
   ],
   "random_sequence": "petrichor_utility_mod:entities/wandering_lantern"

@@ -12,6 +12,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -45,11 +46,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                 .withPool(LootPool.lootPool()
                         .setRolls(UniformGenerator.between(0,2))
                         .add(LootItem.lootTableItem(Items.BONE)
-                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))))
-                .withPool(LootPool.lootPool()
-                        .setRolls(UniformGenerator.between(0,2))
-                        .add(LootItem.lootTableItem(Items.BONE)
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
+
 
         add(ModEntities.HAUNT.get(), LootTable.lootTable());
 
@@ -80,26 +78,26 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(Items.SLIME_BALL)
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
 
-        add(ModEntities.CURSED_DOLL.get(), LootTable.lootTable());
-//                .withPool(LootPool.lootPool()
-//                        .setRolls(ConstantValue.exactly(1.0F))
-//                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
+        add(ModEntities.CURSED_DOLL.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(UniformGenerator.between(0,4))
+                        .add(LootItem.lootTableItem(Items.BRICK)
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
 
         add(ModEntities.NAMELESS.get(), LootTable.lootTable());
 //                .withPool(LootPool.lootPool()
 //                        .setRolls(ConstantValue.exactly(1.0F))
 //                        .add(LootItem.lootTableItem(ModBlocks.ALEXANDRITE_BLOCK.get()))));
 
-
         add(ModEntities.SHROOMIN.get(), LootTable.lootTable());//default
         add(ModEntities.SHROOMIN.get(), ModLootTables.SHROOMIN_RED, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(UniformGenerator.between(1,3))
+                        .setRolls(UniformGenerator.between(1,2))
                         .add(LootItem.lootTableItem(Items.RED_MUSHROOM)
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
         add(ModEntities.SHROOMIN.get(), ModLootTables.SHROOMIN_BROWN, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(UniformGenerator.between(1,3))
+                        .setRolls(UniformGenerator.between(1,2))
                         .add(LootItem.lootTableItem(Items.BROWN_MUSHROOM)
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
 
@@ -114,7 +112,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
         add(ModEntities.WANDERING_LANTERN.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool().when(LootItemKilledByPlayerCondition.killedByPlayer())
-                        .setRolls(ConstantValue.exactly(1.0F))
+                        .setRolls(UniformGenerator.between(1, 3))
                         .add(LootItem.lootTableItem(ModItems.COIN.get()))));
 
         add(ModEntities.FALLEN_STAR.get(), LootTable.lootTable());

@@ -138,11 +138,10 @@ public class ShroominEntity extends PetrichorAttackingEntity {
 
 
         /* SOUNDS */
-//    @Nullable
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundEvents.AZALEA_LEAVES_PLACE;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.COMPOSTER_READY;
+    }
     @Override
     protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.NYLIUM_BREAK;

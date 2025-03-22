@@ -138,11 +138,10 @@ public class HauntEntity extends PetrichorSlowFallEntity implements NeutralMob {
     }
 
     /* SOUNDS */
-//    @javax.annotation.Nullable
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundEvents.AZALEA_LEAVES_PLACE;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.WOOD_HIT;
+    }
     @Override
     protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.WOOD_HIT;

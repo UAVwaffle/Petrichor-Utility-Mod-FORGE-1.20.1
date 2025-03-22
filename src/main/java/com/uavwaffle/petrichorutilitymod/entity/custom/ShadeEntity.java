@@ -76,11 +76,10 @@ public class ShadeEntity extends PetrichorAttackingEntity {
     }
 
     /* SOUNDS */
-//    @javax.annotation.Nullable
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundEvents.AZALEA_LEAVES_PLACE;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.COMPOSTER_FILL;
+    }
     @Override
     protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.WOOD_HIT;

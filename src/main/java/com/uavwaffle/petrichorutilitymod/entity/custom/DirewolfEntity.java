@@ -79,7 +79,6 @@ public class DirewolfEntity extends PetrichorAttackingEntity {
     }
 
     /* SOUNDS */
-    @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
         return SoundEvents.WOLF_GROWL;

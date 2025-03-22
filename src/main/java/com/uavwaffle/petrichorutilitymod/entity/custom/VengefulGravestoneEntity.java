@@ -97,33 +97,10 @@ public class VengefulGravestoneEntity extends PetrichorNoFallEntity {
     }
 
     /* SOUNDS */
-//    @Nullable
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundEvents.ELDER_GUARDIAN_AMBIENT;
-//    }
-
-
-//    @Override
-//    public boolean checkSpawnRules(@NotNull LevelAccessor pLevel, @NotNull MobSpawnType pSpawnReason) {
-//        if(pSpawnReason != MobSpawnType.NATURAL){
-//            return super.checkSpawnRules(pLevel, pSpawnReason);
-//        }
-//
-////        if(!pLevel.canSeeSky(this.getOnPos())) {
-////            return false;
-////        }
-//
-//        if(pLevel.getBiome(this.getOnPos()).containsTag(Tags.Biomes.IS_MUSHROOM)) {
-//            return false;
-//        }
-//
-//        if(pLevel.getBiome(this.getOnPos()).is(Biomes.DEEP_DARK)) {
-//            return false;
-//        }
-//        return  true;
-//    }
-
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.TUFF_BREAK;
+    }
     @Override
     protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.DEEPSLATE_BREAK;

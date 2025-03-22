@@ -1,6 +1,7 @@
 package com.uavwaffle.petrichorutilitymod;
 
 import com.mojang.logging.LogUtils;
+import com.mojang.serialization.Codec;
 import com.uavwaffle.petrichorutilitymod.block.ModBlocks;
 import com.uavwaffle.petrichorutilitymod.block.entity.ModBlockEntities;
 import com.uavwaffle.petrichorutilitymod.block.entity.client.ForgottenGravestoneBlockEntityRenderer;
@@ -8,10 +9,12 @@ import com.uavwaffle.petrichorutilitymod.entity.client.renderer.*;
 import com.uavwaffle.petrichorutilitymod.item.CreativeTabs;
 import com.uavwaffle.petrichorutilitymod.entity.ModEntities;
 import com.uavwaffle.petrichorutilitymod.item.ModItems;
+import com.uavwaffle.petrichorutilitymod.worldgen.PetrichorMobSpawnBiomeModifier;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,6 +24,8 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
 
@@ -31,7 +36,7 @@ public class PetrichorUtilityMod {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "petrichor_utility_mod";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
 
 //    // Create a Deferred Register to hold Blocks which will all be registered under the "petrichor_utility_mod" namespace
@@ -67,9 +72,17 @@ public class PetrichorUtilityMod {
     public PetrichorUtilityMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
+        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+
+        final DeferredRegister<Codec<? extends BiomeModifier>> biomeModifiers = DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, PetrichorUtilityMod.MODID);
+        biomeModifiers.register(modEventBus);
+        biomeModifiers.register("petrichor_mob_spawns", PetrichorMobSpawnBiomeModifier::makeCodec);
         //register Items and creative tabs here!
 
 //        // Register the Deferred Register to the mod event bus so blocks get registered
@@ -86,14 +99,18 @@ public class PetrichorUtilityMod {
 
         GeckoLib.initialize();
 
+
+//        System.out.println("Start biomeModifiers");
+//
+//        System.out.println("End biomeModifiers");
+
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
 //        modEventBus.addListener(CreativeTabs::addCreative);
 
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

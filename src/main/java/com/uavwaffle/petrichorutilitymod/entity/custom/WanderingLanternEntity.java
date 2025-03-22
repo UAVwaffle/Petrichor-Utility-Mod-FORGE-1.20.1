@@ -75,11 +75,10 @@ public class WanderingLanternEntity extends PetrichorSlowFallEntity {
     }
 
     /* SOUNDS */
-//    @Nullable
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundEvents.CHAIN_BREAK;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.CHAIN_BREAK;
+    }
     @Override
     protected @NotNull SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         return SoundEvents.CHAIN_BREAK;
@@ -88,19 +87,4 @@ public class WanderingLanternEntity extends PetrichorSlowFallEntity {
     protected @NotNull SoundEvent getDeathSound() {
         return SoundEvents.CHAIN_BREAK;
     }
-
-//    @Override
-//    public boolean checkSpawnRules(@NotNull LevelAccessor pLevel, @NotNull MobSpawnType pSpawnReason) {
-//        boolean passDefaultSpawnRules = super.checkSpawnRules(pLevel, pSpawnReason);
-//        if(!passDefaultSpawnRules) {
-//            System.out.println("I don't pass the default rules! " + this.getOnPos());
-//            return false;
-//        }
-//        if (!pLevel.canSeeSky(this.getOnPos(2))) {
-//            System.out.println("I cannot see the sky! " + this.getOnPos());
-//            return false;
-//        }
-//        System.out.println("I pass the spawn rules and I can see the sky! " + this.getOnPos());
-//        return true;
-//    }
 }
