@@ -12,6 +12,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -42,6 +43,8 @@ public class CursedDollEntity extends PetrichorSlowFallEntity {
                 .add(Attributes.FOLLOW_RANGE, 20);
     }
 
+                /* reminder: Make a custom MeleeAttackGoal with a tick timer to make a delayed attack and to increase the attack range. (MAKE UNIVERSAL) */
+
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -51,6 +54,8 @@ public class CursedDollEntity extends PetrichorSlowFallEntity {
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0d, false));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
     }
 
 

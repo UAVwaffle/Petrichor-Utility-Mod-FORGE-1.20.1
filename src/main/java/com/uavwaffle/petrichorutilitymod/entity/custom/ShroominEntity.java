@@ -4,6 +4,7 @@ import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEn
 import com.uavwaffle.petrichorutilitymod.entity.varient_enum.ShroominVarient;
 import com.uavwaffle.petrichorutilitymod.util.id.ModLootTables;
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -22,6 +23,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -149,5 +151,9 @@ public class ShroominEntity extends PetrichorAttackingEntity {
     @Override
     protected @NotNull SoundEvent getDeathSound() {
         return SoundEvents.NYLIUM_BREAK;
+    }
+    @Override
+    protected void playStepSound(@NotNull BlockPos pPos, @NotNull BlockState pBlock) {
+        this.playSound(SoundEvents.BIG_DRIPLEAF_PLACE, 0.15F, 1.0F);
     }
 }

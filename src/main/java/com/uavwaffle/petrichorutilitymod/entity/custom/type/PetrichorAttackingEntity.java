@@ -17,7 +17,6 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 public abstract class PetrichorAttackingEntity extends Monster implements GeoEntity {
-
     private final int attackAnimationTickLength;
     private int attackAnimationTick = 0;
     private boolean attacking = false;

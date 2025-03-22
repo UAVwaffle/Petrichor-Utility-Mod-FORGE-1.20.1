@@ -2,6 +2,7 @@ package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.varient_enum.SpriteVarient;
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -18,6 +19,7 @@ import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -168,6 +170,10 @@ public class SpriteEntity extends PathfinderMob implements GeoEntity {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.AZALEA_LEAVES_BREAK;
+    }
+    @Override
+    protected void playStepSound(@NotNull BlockPos pPos, @NotNull BlockState pBlock) {
+        this.playSound(SoundEvents.BIG_DRIPLEAF_PLACE, 0.15F, 1.0F);
     }
 
 }

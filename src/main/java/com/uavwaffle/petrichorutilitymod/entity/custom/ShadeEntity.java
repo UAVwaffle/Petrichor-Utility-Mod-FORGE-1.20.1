@@ -2,6 +2,7 @@ package com.uavwaffle.petrichorutilitymod.entity.custom;
 
 import com.uavwaffle.petrichorutilitymod.entity.custom.type.PetrichorAttackingEntity;
 import com.uavwaffle.petrichorutilitymod.util.Constants;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -87,6 +89,10 @@ public class ShadeEntity extends PetrichorAttackingEntity {
     @Override
     protected @NotNull SoundEvent getDeathSound() {
         return SoundEvents.WOOD_BREAK;
+    }
+    @Override
+    protected void playStepSound(@NotNull BlockPos pPos, @NotNull BlockState pBlock) {
+        this.playSound(SoundEvents.WOOD_HIT, 0.8F, 2.0F);
     }
 
     @Override
