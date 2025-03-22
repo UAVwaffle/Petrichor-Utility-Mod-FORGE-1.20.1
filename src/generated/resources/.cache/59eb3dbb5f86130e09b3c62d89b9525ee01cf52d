@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-21T21:46:01.7150708	Loot Tables
+// 1.20.1	2025-03-22T14:08:22.646476	Loot Tables
 f3388dd43f212d42c5de6e786b742d55c4b9b87e data/petrichor_utility_mod/loot_tables/blocks/alexandrite_block.json
 12a8994290ebaced30e000ededa8acbf7448db51 data/petrichor_utility_mod/loot_tables/blocks/forgotten_gravestone_block_entity.json
 835597e0ed6846a41c50bd124d7ebe2343c99000 data/petrichor_utility_mod/loot_tables/blocks/raw_alexandrite_block.json
@@ -13,8 +13,8 @@ eb7739d4e9ab71f3badf545d0f62cc6c0f40a76b data/petrichor_utility_mod/loot_tables/
 b8e08123ca044299d7c99c852e299392ae699bcc data/petrichor_utility_mod/loot_tables/entities/nameless.json
 f3855903c6535da18365c89cd8d4372ca4bd90c1 data/petrichor_utility_mod/loot_tables/entities/shade.json
 26c2fed2cb7ad7735af584dcf7555c4c6b263879 data/petrichor_utility_mod/loot_tables/entities/shroomin.json
-e87aecdde7321fc4a2544997f318fab7ebdd3366 data/petrichor_utility_mod/loot_tables/entities/shroomin/brown.json
-6e0e0625b4d12055b08b410d8320da0da6906762 data/petrichor_utility_mod/loot_tables/entities/shroomin/red.json
+9f186385f959a74b76c35198919e02c4d8aa4949 data/petrichor_utility_mod/loot_tables/entities/shroomin/brown.json
+5f47238bf8a73067bebf018a9beb10fa30119311 data/petrichor_utility_mod/loot_tables/entities/shroomin/red.json
 4306dea522557d44f85ffef5e98928846e4e0fd9 data/petrichor_utility_mod/loot_tables/entities/specter.json
 eab4feab3df4817c97abbe54eceabf8756deca5e data/petrichor_utility_mod/loot_tables/entities/sprite.json
 fbbba1ad5738448978fcba5d934bd690d2a20b9e data/petrichor_utility_mod/loot_tables/entities/vengeful_gravestone.json

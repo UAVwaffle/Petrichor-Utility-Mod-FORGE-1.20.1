@@ -92,12 +92,12 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.SHROOMIN.get(), LootTable.lootTable());//default
         add(ModEntities.SHROOMIN.get(), ModLootTables.SHROOMIN_RED, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(UniformGenerator.between(1,2))
+                        .setRolls(UniformGenerator.between(0,2))
                         .add(LootItem.lootTableItem(Items.RED_MUSHROOM)
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
         add(ModEntities.SHROOMIN.get(), ModLootTables.SHROOMIN_BROWN, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(UniformGenerator.between(1,2))
+                        .setRolls(UniformGenerator.between(0,2))
                         .add(LootItem.lootTableItem(Items.BROWN_MUSHROOM)
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
 
